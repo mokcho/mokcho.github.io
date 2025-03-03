@@ -1,29 +1,28 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML 연구자 포트폴리오</title>
+    <title>ML Researcher Portfolio</title>
     <style>
         :root {
             --navy: #0a192f;
             --light-navy: #112240;
             --lightest-navy: #233554;
-            --white: #e6f1ff;
-            --light-white: #ccd6f6;
-            --lightest-white: #8892b0;
+            --white: #ffffff;
+            --black: #000000;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+            font-family: 'Arial', 'Helvetica', sans-serif;
         }
 
         body {
-            background-color: var(--navy);
-            color: var(--white);
+            background-color: var(--white);
+            color: var(--black);
             line-height: 1.6;
         }
 
@@ -44,7 +43,7 @@
             top: 0;
             padding: 15px 0;
             z-index: 100;
-            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .navbar ul {
@@ -58,14 +57,14 @@
         }
 
         .navbar ul li a {
-            color: var(--light-white);
+            color: var(--white);
             text-decoration: none;
             position: relative;
-            transition: color 0.3s ease;
+            transition: opacity 0.3s ease;
         }
 
         .navbar ul li a:hover {
-            color: var(--white);
+            opacity: 0.8;
         }
 
         .navbar ul li a::after {
@@ -94,9 +93,8 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background-color: var(--light-white);
-            margin-right: 30px;
             overflow: hidden;
+            margin-right: 30px;
             flex-shrink: 0;
         }
 
@@ -114,10 +112,11 @@
         .profile-info h1 {
             font-size: 32px;
             margin-bottom: 10px;
+            color: var(--black);
         }
 
         .profile-info p {
-            color: var(--light-white);
+            color: var(--black);
             margin-bottom: 15px;
         }
 
@@ -127,14 +126,14 @@
         }
 
         .social-links a {
-            color: var(--light-white);
+            color: var(--navy);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: opacity 0.3s ease;
             font-size: 24px;
         }
 
         .social-links a:hover {
-            color: var(--white);
+            opacity: 0.7;
         }
 
         section {
@@ -146,6 +145,7 @@
             margin-bottom: 30px;
             position: relative;
             text-align: center;
+            color: var(--black);
         }
 
         .section-title::after {
@@ -156,31 +156,20 @@
             transform: translateX(-50%);
             width: 50px;
             height: 3px;
-            background-color: var(--white);
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 30px;
+            background-color: var(--navy);
         }
 
         .card {
-            background-color: var(--light-navy);
+            background-color: var(--navy);
             border-radius: 8px;
             overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .card-content {
             padding: 20px;
+            color: var(--white);
         }
 
         .card-title {
@@ -190,13 +179,22 @@
 
         .card-date {
             font-size: 14px;
-            color: var(--lightest-white);
+            opacity: 0.8;
             margin-bottom: 10px;
         }
 
         .card-description {
-            color: var(--light-white);
+            opacity: 0.9;
             font-size: 15px;
+        }
+
+        .clickable {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .clickable:hover {
+            transform: translateY(-3px);
         }
 
         /* Modal styles */
@@ -213,13 +211,15 @@
         }
 
         .modal-content {
-            background-color: var(--light-navy);
+            background-color: var(--white);
             margin: 50px auto;
             padding: 30px;
             width: 90%;
             max-width: 800px;
             border-radius: 8px;
             position: relative;
+            color: var(--black);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .close-button {
@@ -227,7 +227,7 @@
             top: 20px;
             right: 20px;
             font-size: 24px;
-            color: var(--light-white);
+            color: var(--navy);
             background: none;
             border: none;
             cursor: pointer;
@@ -240,19 +240,21 @@
         .modal-title {
             font-size: 24px;
             margin-bottom: 10px;
+            color: var(--navy);
         }
 
         .modal-subtitle {
-            color: var(--light-white);
+            color: var(--black);
+            opacity: 0.7;
             font-size: 16px;
         }
 
         .modal-body {
-            color: var(--light-white);
+            color: var(--black);
         }
 
         .modal-body h3 {
-            color: var(--white);
+            color: var(--navy);
             margin: 20px 0 10px;
         }
 
@@ -266,19 +268,20 @@
         }
 
         .modal-body a {
-            color: var(--white);
+            color: var(--navy);
             text-decoration: underline;
         }
 
         footer {
-            background-color: var(--light-navy);
+            background-color: var(--navy);
             padding: 30px 0;
             text-align: center;
             margin-top: 50px;
+            color: var(--white);
         }
 
         .copyright {
-            color: var(--lightest-white);
+            opacity: 0.8;
             font-size: 14px;
         }
 
@@ -297,10 +300,6 @@
             .social-links {
                 justify-content: center;
             }
-            
-            .cards {
-                grid-template-columns: 1fr;
-            }
         }
     </style>
 </head>
@@ -309,11 +308,11 @@
         <div class="container">
             <div class="profile">
                 <div class="profile-image">
-                    <img src="/api/placeholder/120/120" alt="프로필 사진">
+                    <img src="/api/placeholder/120/120" alt="Profile Photo">
                 </div>
                 <div class="profile-info">
-                    <h1>홍길동</h1>
-                    <p>안녕하세요! 저는 컴퓨터 비전과 딥러닝을 연구하는 대학원생입니다. 현재 [대학교 이름]에서 [연구 분야]에 관한 연구를 진행하고 있으며, 인공지능 기술을 통해 실생활의 문제를 해결하는 데 관심이 있습니다.</p>
+                    <h1>John Doe</h1>
+                    <p>Hello! I'm a graduate student researching Computer Vision and Deep Learning. Currently, I'm conducting research on [research area] at [university name]. I'm passionate about solving real-world problems using artificial intelligence techniques.</p>
                     <div class="social-links">
                         <a href="#" title="GitHub">G</a>
                         <a href="#" title="LinkedIn">L</a>
@@ -331,7 +330,7 @@
                 <li><a href="#education">Education</a></li>
                 <li><a href="#publication">Publication</a></li>
                 <li><a href="#project">Project</a></li>
-                <li><a href="#post">Post</a></li>
+                <li><a href="#activities">Other Activities</a></li>
             </ul>
         </div>
     </nav>
@@ -339,27 +338,25 @@
     <section id="education">
         <div class="container">
             <h2 class="section-title">Education</h2>
-            <div class="cards">
-                <div class="card" onclick="openModal('edu1')">
-                    <div class="card-content">
-                        <h3 class="card-title">Ph.D. in Computer Science</h3>
-                        <div class="card-date">2022 - 현재</div>
-                        <p class="card-description">서울대학교 컴퓨터공학과 박사과정</p>
-                    </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Ph.D. in Computer Science</h3>
+                    <div class="card-date">2022 - Present</div>
+                    <p class="card-description">Seoul National University, Department of Computer Science and Engineering</p>
                 </div>
-                <div class="card" onclick="openModal('edu2')">
-                    <div class="card-content">
-                        <h3 class="card-title">M.S. in Computer Science</h3>
-                        <div class="card-date">2020 - 2022</div>
-                        <p class="card-description">서울대학교 컴퓨터공학과 석사</p>
-                    </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">M.S. in Computer Science</h3>
+                    <div class="card-date">2020 - 2022</div>
+                    <p class="card-description">Seoul National University, Department of Computer Science and Engineering</p>
                 </div>
-                <div class="card" onclick="openModal('edu3')">
-                    <div class="card-content">
-                        <h3 class="card-title">B.S. in Computer Science</h3>
-                        <div class="card-date">2016 - 2020</div>
-                        <p class="card-description">한국대학교 컴퓨터공학과 학사</p>
-                    </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">B.S. in Computer Science</h3>
+                    <div class="card-date">2016 - 2020</div>
+                    <p class="card-description">Korea University, Department of Computer Science and Engineering</p>
                 </div>
             </div>
         </div>
@@ -368,27 +365,25 @@
     <section id="publication">
         <div class="container">
             <h2 class="section-title">Publication</h2>
-            <div class="cards">
-                <div class="card" onclick="openModal('pub1')">
-                    <div class="card-content">
-                        <h3 class="card-title">Advances in Computer Vision Using Neural Networks</h3>
-                        <div class="card-date">2023 - CVPR</div>
-                        <p class="card-description">딥러닝을 활용한 컴퓨터 비전 기술의 발전에 관한 연구</p>
-                    </div>
+            <div class="card clickable" onclick="openModal('pub1')">
+                <div class="card-content">
+                    <h3 class="card-title">Advances in Computer Vision Using Neural Networks</h3>
+                    <div class="card-date">2023 - CVPR</div>
+                    <p class="card-description">Research on advancements in computer vision technology using deep learning.</p>
                 </div>
-                <div class="card" onclick="openModal('pub2')">
-                    <div class="card-content">
-                        <h3 class="card-title">Improved Object Detection with Low-resource Computing</h3>
-                        <div class="card-date">2022 - ICCV</div>
-                        <p class="card-description">저사양 컴퓨팅 환경에서의 효율적인 객체 검출 알고리즘</p>
-                    </div>
+            </div>
+            <div class="card clickable" onclick="openModal('pub2')">
+                <div class="card-content">
+                    <h3 class="card-title">Improved Object Detection with Low-resource Computing</h3>
+                    <div class="card-date">2022 - ICCV</div>
+                    <p class="card-description">Efficient object detection algorithms in low-computing environments.</p>
                 </div>
-                <div class="card" onclick="openModal('pub3')">
-                    <div class="card-content">
-                        <h3 class="card-title">Multi-modal Learning for Medical Image Analysis</h3>
-                        <div class="card-date">2021 - MICCAI</div>
-                        <p class="card-description">의료 영상 분석을 위한 멀티모달 학습 방법론</p>
-                    </div>
+            </div>
+            <div class="card clickable" onclick="openModal('pub3')">
+                <div class="card-content">
+                    <h3 class="card-title">Multi-modal Learning for Medical Image Analysis</h3>
+                    <div class="card-date">2021 - MICCAI</div>
+                    <p class="card-description">Multi-modal learning methodology for medical image analysis.</p>
                 </div>
             </div>
         </div>
@@ -397,90 +392,58 @@
     <section id="project">
         <div class="container">
             <h2 class="section-title">Project</h2>
-            <div class="cards">
-                <div class="card" onclick="openModal('proj1')">
-                    <div class="card-content">
-                        <h3 class="card-title">실시간 객체 인식 시스템</h3>
-                        <div class="card-date">2023.01 - 2023.06</div>
-                        <p class="card-description">모바일 기기에서 동작하는 경량화된 실시간 객체 인식 시스템 개발</p>
-                    </div>
+            <div class="card clickable" onclick="openModal('proj1')">
+                <div class="card-content">
+                    <h3 class="card-title">Real-time Object Recognition System</h3>
+                    <div class="card-date">Jan 2023 - Jun 2023</div>
+                    <p class="card-description">Development of a lightweight real-time object recognition system for mobile devices.</p>
                 </div>
-                <div class="card" onclick="openModal('proj2')">
-                    <div class="card-content">
-                        <h3 class="card-title">의료 영상 세분화 모델</h3>
-                        <div class="card-date">2022.03 - 2022.12</div>
-                        <p class="card-description">MRI 영상에서 종양을 자동으로 세분화하는 딥러닝 모델 개발</p>
-                    </div>
+            </div>
+            <div class="card clickable" onclick="openModal('proj2')">
+                <div class="card-content">
+                    <h3 class="card-title">Medical Image Segmentation Model</h3>
+                    <div class="card-date">Mar 2022 - Dec 2022</div>
+                    <p class="card-description">Development of a deep learning model that automatically segments tumors in MRI images.</p>
                 </div>
-                <div class="card" onclick="openModal('proj3')">
-                    <div class="card-content">
-                        <h3 class="card-title">자율주행 시뮬레이션</h3>
-                        <div class="card-date">2021.05 - 2021.11</div>
-                        <p class="card-description">강화학습을 활용한 자율주행 알고리즘 시뮬레이션 환경 구축</p>
-                    </div>
+            </div>
+            <div class="card clickable" onclick="openModal('proj3')">
+                <div class="card-content">
+                    <h3 class="card-title">Autonomous Driving Simulation</h3>
+                    <div class="card-date">May 2021 - Nov 2021</div>
+                    <p class="card-description">Building a simulation environment for autonomous driving algorithms using reinforcement learning.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="post">
+    <section id="activities">
         <div class="container">
-            <h2 class="section-title">Post</h2>
-            <div class="cards">
-                <div class="card" onclick="openModal('post1')">
-                    <div class="card-content">
-                        <h3 class="card-title">Vision Transformer의 이해와 활용</h3>
-                        <div class="card-date">2023.11.15</div>
-                        <p class="card-description">비전 트랜스포머의 기본 원리와 실제 적용 사례에 대한 설명</p>
-                    </div>
+            <h2 class="section-title">Other Activities</h2>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Workshop Organizer: AI in Healthcare</h3>
+                    <div class="card-date">November 2023</div>
+                    <p class="card-description">Organized a workshop on the applications of AI in healthcare, featuring speakers from academia and industry.</p>
                 </div>
-                <div class="card" onclick="openModal('post2')">
-                    <div class="card-content">
-                        <h3 class="card-title">효율적인 딥러닝 모델 최적화 방법</h3>
-                        <div class="card-date">2023.08.22</div>
-                        <p class="card-description">모델 경량화와 양자화를 통한 딥러닝 모델 최적화 전략</p>
-                    </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Teaching Assistant - Machine Learning</h3>
+                    <div class="card-date">Fall 2022</div>
+                    <p class="card-description">Served as a TA for the graduate-level Machine Learning course, leading lab sessions and grading assignments.</p>
                 </div>
-                <div class="card" onclick="openModal('post3')">
-                    <div class="card-content">
-                        <h3 class="card-title">대학원생을 위한 연구 팁</h3>
-                        <div class="card-date">2023.04.10</div>
-                        <p class="card-description">ML/AI 분야 대학원생이 알아두면 좋을 연구 및 논문 작성 팁</p>
-                    </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Guest Lecturer - Deep Learning Seminar</h3>
+                    <div class="card-date">Spring 2022</div>
+                    <p class="card-description">Delivered lectures on recent advances in computer vision at the university's weekly deep learning seminar.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Modal windows for details -->
-    <div id="edu1Modal" class="modal">
-        <div class="modal-content">
-            <button class="close-button" onclick="closeModal('edu1')">×</button>
-            <div class="modal-header">
-                <h2 class="modal-title">Ph.D. in Computer Science</h2>
-                <div class="modal-subtitle">2022 - 현재 | 서울대학교 컴퓨터공학과</div>
-            </div>
-            <div class="modal-body">
-                <h3>연구 분야</h3>
-                <p>컴퓨터 비전, 딥러닝, 영상 처리</p>
-                
-                <h3>주요 과목</h3>
-                <ul>
-                    <li>고급 컴퓨터 비전</li>
-                    <li>딥러닝 특론</li>
-                    <li>인공지능 세미나</li>
-                    <li>고급 머신러닝</li>
-                </ul>
-                
-                <h3>연구실</h3>
-                <p>인공지능 연구실 (지도교수: 김교수)</p>
-                
-                <h3>연구 주제</h3>
-                <p>저자원 환경에서의 효율적인 컴퓨터 비전 알고리즘 개발에 관한 연구를 수행하고 있습니다.</p>
-            </div>
-        </div>
-    </div>
-
     <div id="pub1Modal" class="modal">
         <div class="modal-content">
             <button class="close-button" onclick="closeModal('pub1')">×</button>
@@ -489,17 +452,63 @@
                 <div class="modal-subtitle">2023 - CVPR</div>
             </div>
             <div class="modal-body">
-                <h3>저자</h3>
-                <p>홍길동, 김연구, 이교수</p>
+                <h3>Authors</h3>
+                <p>John Doe, Kim Research, Lee Professor</p>
                 
-                <h3>초록</h3>
-                <p>본 연구에서는 최신 신경망 기술을 활용한 컴퓨터 비전 분야의 발전에 대해 탐구합니다. 특히, 트랜스포머 기반 아키텍처를 활용한 새로운 접근 방식을 제안하고, 기존 CNN 기반 모델과의 성능을 비교 분석합니다. 실험 결과, 제안된 방법은 이미지 분류, 객체 검출, 세분화 등 다양한 컴퓨터 비전 작업에서 우수한 성능을 보였습니다.</p>
+                <h3>Abstract</h3>
+                <p>This research explores advances in computer vision using state-of-the-art neural network technologies. Specifically, we propose a novel approach using transformer-based architectures and compare their performance with traditional CNN-based models. Experimental results show that the proposed method achieved superior performance in various computer vision tasks including image classification, object detection, and segmentation.</p>
                 
-                <h3>키워드</h3>
-                <p>컴퓨터 비전, 딥러닝, 트랜스포머, 이미지 인식</p>
+                <h3>Keywords</h3>
+                <p>Computer Vision, Deep Learning, Transformers, Image Recognition</p>
                 
-                <h3>링크</h3>
-                <p><a href="#">논문 보기</a> | <a href="#">코드</a> | <a href="#">발표 자료</a></p>
+                <h3>Links</h3>
+                <p><a href="#">View Paper</a> | <a href="#">Code</a> | <a href="#">Presentation</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="pub2Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('pub2')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Improved Object Detection with Low-resource Computing</h2>
+                <div class="modal-subtitle">2022 - ICCV</div>
+            </div>
+            <div class="modal-body">
+                <h3>Authors</h3>
+                <p>John Doe, Park AI, Zhang Vision</p>
+                
+                <h3>Abstract</h3>
+                <p>In this work, we address the challenge of running object detection models on resource-constrained devices. We propose a novel lightweight architecture that achieves competitive accuracy while significantly reducing computational requirements. Our method introduces an adaptive pruning technique that maintains performance in critical regions of interest. Extensive experiments demonstrate that our approach outperforms existing methods on several benchmarks while using 75% fewer parameters.</p>
+                
+                <h3>Keywords</h3>
+                <p>Object Detection, Model Compression, Edge Computing, Computer Vision</p>
+                
+                <h3>Links</h3>
+                <p><a href="#">View Paper</a> | <a href="#">Code</a> | <a href="#">Demo</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="pub3Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('pub3')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Multi-modal Learning for Medical Image Analysis</h2>
+                <div class="modal-subtitle">2021 - MICCAI</div>
+            </div>
+            <div class="modal-body">
+                <h3>Authors</h3>
+                <p>John Doe, Dr. Medical, Prof. Imaging</p>
+                
+                <h3>Abstract</h3>
+                <p>Medical image analysis often requires integrating information from multiple modalities to improve diagnostic accuracy. In this paper, we present a novel framework for multi-modal learning that effectively combines features from different imaging modalities (MRI, CT, PET) for improved disease classification and segmentation. Our approach introduces a cross-modal attention mechanism that dynamically weights the contribution of each modality. Evaluation on three public datasets shows significant improvements over single-modality methods and existing fusion approaches.</p>
+                
+                <h3>Keywords</h3>
+                <p>Medical Imaging, Multi-modal Learning, Image Segmentation, Deep Learning</p>
+                
+                <h3>Links</h3>
+                <p><a href="#">View Paper</a> | <a href="#">Code</a> | <a href="#">Dataset</a></p>
             </div>
         </div>
     </div>
@@ -508,86 +517,118 @@
         <div class="modal-content">
             <button class="close-button" onclick="closeModal('proj1')">×</button>
             <div class="modal-header">
-                <h2 class="modal-title">실시간 객체 인식 시스템</h2>
-                <div class="modal-subtitle">2023.01 - 2023.06</div>
+                <h2 class="modal-title">Real-time Object Recognition System</h2>
+                <div class="modal-subtitle">Jan 2023 - Jun 2023</div>
             </div>
             <div class="modal-body">
-                <h3>프로젝트 소개</h3>
-                <p>모바일 기기와 같은 저사양 환경에서도 효율적으로 동작할 수 있는 실시간 객체 인식 시스템을 개발했습니다. 모델 경량화, 양자화, 지식 증류 등 다양한 최적화 기법을 적용했습니다.</p>
+                <h3>Project Overview</h3>
+                <p>Developed a real-time object recognition system that can efficiently operate in low-resource environments such as mobile devices. Applied various optimization techniques including model compression, quantization, and knowledge distillation.</p>
                 
-                <h3>사용 기술</h3>
+                <h3>Technologies Used</h3>
                 <ul>
                     <li>PyTorch / TensorFlow Lite</li>
                     <li>YOLOv5 / MobileNet</li>
-                    <li>모델 경량화 및 양자화</li>
-                    <li>Android / iOS 애플리케이션 개발</li>
+                    <li>Model Compression & Quantization</li>
+                    <li>Android / iOS Application Development</li>
                 </ul>
                 
-                <h3>주요 성과</h3>
+                <h3>Key Achievements</h3>
                 <ul>
-                    <li>기존 모델 대비 10배 이상 경량화 달성</li>
-                    <li>스마트폰에서 초당 30프레임 이상의 처리 속도 달성</li>
-                    <li>정확도 손실 5% 미만으로 유지</li>
+                    <li>Achieved over 10x model compression compared to baseline</li>
+                    <li>Processing speed of 30+ frames per second on smartphones</li>
+                    <li>Maintained accuracy loss under 5%</li>
                 </ul>
                 
-                <h3>링크</h3>
-                <p><a href="#">GitHub 저장소</a> | <a href="#">데모 영상</a> | <a href="#">기술 문서</a></p>
+                <h3>Links</h3>
+                <p><a href="#">GitHub Repository</a> | <a href="#">Demo Video</a> | <a href="#">Technical Documentation</a></p>
             </div>
         </div>
     </div>
 
-    <div id="post1Modal" class="modal">
+    <div id="proj2Modal" class="modal">
         <div class="modal-content">
-            <button class="close-button" onclick="closeModal('post1')">×</button>
+            <button class="close-button" onclick="closeModal('proj2')">×</button>
             <div class="modal-header">
-                <h2 class="modal-title">Vision Transformer의 이해와 활용</h2>
-                <div class="modal-subtitle">2023.11.15</div>
+                <h2 class="modal-title">Medical Image Segmentation Model</h2>
+                <div class="modal-subtitle">Mar 2022 - Dec 2022</div>
             </div>
             <div class="modal-body">
-                <h3>소개</h3>
-                <p>이 글에서는 최근 컴퓨터 비전 분야에서 주목받고 있는 Vision Transformer(ViT)의 기본 원리와 실제 적용 사례에 대해 알아봅니다.</p>
+                <h3>Project Overview</h3>
+                <p>Developed a deep learning model for automatic segmentation of tumors in MRI images. The model utilizes an encoder-decoder architecture with attention mechanisms to accurately identify tumor boundaries.</p>
                 
-                <h3>Vision Transformer의 기본 구조</h3>
-                <p>Vision Transformer는 자연어 처리에서 큰 성공을 거둔 트랜스포머 아키텍처를 이미지 처리에 적용한 모델입니다. 기존의 CNN과 달리, 이미지를 패치 단위로 분할하여 각 패치를 토큰으로 간주하고 이를 트랜스포머 인코더에 입력합니다...</p>
-                
-                <h3>장단점 분석</h3>
-                <p>ViT의 주요 장점은 글로벌 컨텍스트를 효과적으로 캡처할 수 있다는 점입니다. 반면, 데이터가 적은 환경에서는 과적합 문제가 발생할 수 있으며, 계산 복잡도가 높다는 단점이 있습니다...</p>
-                
-                <h3>실제 적용 사례</h3>
+                <h3>Technologies Used</h3>
                 <ul>
-                    <li>이미지 분류: ImageNet에서 SOTA 성능 달성</li>
-                    <li>객체 검출: DETR, Deformable DETR 등</li>
-                    <li>세분화: SegFormer, Mask2Former 등</li>
+                    <li>PyTorch</li>
+                    <li>U-Net / Attention U-Net</li>
+                    <li>Medical Image Processing</li>
+                    <li>MONAI Framework</li>
                 </ul>
                 
-                <h3>전체 글 읽기</h3>
-                <p><a href="#">블로그에서 전체 글 읽기</a></p>
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li>Dice similarity coefficient of 0.89 on test dataset</li>
+                    <li>Reduced false positive rate by 35% compared to baseline</li>
+                    <li>Model deployed in research collaboration with [Hospital Name]</li>
+                </ul>
+                
+                <h3>Links</h3>
+                <p><a href="#">GitHub Repository</a> | <a href="#">Research Paper</a> | <a href="#">Model Demo</a></p>
             </div>
         </div>
     </div>
 
-    <!-- 기타 모달 윈도우들... -->
+    <div id="proj3Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('proj3')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Autonomous Driving Simulation</h2>
+                <div class="modal-subtitle">May 2021 - Nov 2021</div>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>Created a simulation environment for testing and training autonomous driving algorithms using reinforcement learning. The environment supports various traffic scenarios, weather conditions, and sensor configurations.</p>
+                
+                <h3>Technologies Used</h3>
+                <ul>
+                    <li>Unity / CARLA Simulator</li>
+                    <li>Python / TensorFlow</li>
+                    <li>Reinforcement Learning (PPO, SAC)</li>
+                    <li>Computer Vision for Perception</li>
+                </ul>
+                
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li>Successfully implemented end-to-end learning for lane following</li>
+                    <li>Agent achieved 95% success rate in urban navigation scenarios</li>
+                    <li>Integrated multiple sensor modalities (camera, lidar, radar)</li>
+                </ul>
+                
+                <h3>Links</h3>
+                <p><a href="#">GitHub Repository</a> | <a href="#">Demo Video</a> | <a href="#">Technical Report</a></p>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
-            <p class="copyright">© 2025 홍길동. All rights reserved.</p>
+            <p class="copyright">© 2025 John Doe. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // 모달 열기
+        // Open modal
         function openModal(id) {
             document.getElementById(id + 'Modal').style.display = 'block';
-            document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
 
-        // 모달 닫기
+        // Close modal
         function closeModal(id) {
             document.getElementById(id + 'Modal').style.display = 'none';
-            document.body.style.overflow = 'auto'; // 배경 스크롤 허용
+            document.body.style.overflow = 'auto'; // Allow background scrolling
         }
 
-        // 스무스 스크롤
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -597,7 +638,7 @@
             });
         });
 
-        // 모달 외부 클릭 시 닫기
+        // Close modal when clicking outside
         window.onclick = function(event) {
             if (event.target.classList.contains('modal')) {
                 event.target.style.display = 'none';
