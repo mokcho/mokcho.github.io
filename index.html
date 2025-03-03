@@ -1,3 +1,6 @@
+전체 업데이트된 코드입니다:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -341,7 +344,7 @@
                         <a href="#" title="CV">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                         </a>
-                        <a href="#" title="Email">
+                        <a href="mailto:ksps7106@skku.edu" title="Email">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         </a>
                         <a href="#" title="GitHub">
@@ -412,23 +415,9 @@
             <h2 class="section-title">🎯 Project</h2>
             <div class="card clickable" onclick="openModal('proj1')">
                 <div class="card-content">
-                    <h3 class="card-title">Efficient Computing Architectures for AI</h3>
-                    <div class="card-date">Sep. 2024 - Present</div>
-                    <p class="card-description">Research on memory-efficient computing architectures for machine learning applications.</p>
-                </div>
-            </div>
-            <div class="card clickable" onclick="openModal('proj2')">
-                <div class="card-content">
-                    <h3 class="card-title">Hyperdimensional Computing Framework</h3>
-                    <div class="card-date">Jan. 2024 - Aug. 2024</div>
-                    <p class="card-description">Development of a memory-efficient framework for implementing hyperdimensional computing on hardware.</p>
-                </div>
-            </div>
-            <div class="card clickable" onclick="openModal('proj3')">
-                <div class="card-content">
-                    <h3 class="card-title">Mathematical Foundations of Deep Learning</h3>
+                    <h3 class="card-title">제1회 SKKU 자율주행 SW 경진대회 (3rd place)</h3>
                     <div class="card-date">Mar. 2023 - Dec. 2023</div>
-                    <p class="card-description">Research on the mathematical principles underlying deep learning algorithms and architectures.</p>
+                    <p class="card-description">Autonomous driving software competition using electric cars with sensors to complete three challenging missions.</p>
                 </div>
             </div>
         </div>
@@ -454,7 +443,7 @@
             </div>
             <div class="card">
                 <div class="card-content">
-                    <h3 class="card-title">🐶 Animal Shelter Volunteering</h3>
+                    <h3 class="card-title">🐶 Animal</h3>
                     <div class="card-date">Aug. 2022 - Aug. 2024</div>
                     <p class="card-description">Volunteer work at animal shelters for abandoned dogs and cats through university club Irion.</p>
                 </div>
@@ -490,95 +479,29 @@
         <div class="modal-content">
             <button class="close-button" onclick="closeModal('proj1')">×</button>
             <div class="modal-header">
-                <h2 class="modal-title">Efficient Computing Architectures for AI</h2>
-                <div class="modal-subtitle">Sep. 2024 - Present</div>
-            </div>
-            <div class="modal-body">
-                <h3>Project Overview</h3>
-                <p>Researching novel computing architectures for efficient AI deployment, with a focus on in-memory computing and specialized hardware accelerators for machine learning applications.</p>
-                
-                <h3>Research Focus</h3>
-                <ul>
-                    <li>In-Memory Computing architectures</li>
-                    <li>Hardware-algorithm co-design</li>
-                    <li>Energy-efficient ML acceleration</li>
-                    <li>Novel computing paradigms</li>
-                </ul>
-                
-                <h3>Current Progress</h3>
-                <ul>
-                    <li>Developing mathematical models for memory optimization</li>
-                    <li>Designing novel memory access patterns for neural networks</li>
-                    <li>Exploring crossbar array utilization for matrix operations</li>
-                </ul>
-                
-                <h3>Links</h3>
-                <p><a href="#">Research Group</a> | <a href="#">Related Publications</a></p>
-            </div>
-        </div>
-    </div>
-
-    <div id="proj2Modal" class="modal">
-        <div class="modal-content">
-            <button class="close-button" onclick="closeModal('proj2')">×</button>
-            <div class="modal-header">
-                <h2 class="modal-title">Hyperdimensional Computing Framework</h2>
-                <div class="modal-subtitle">Jan. 2024 - Aug. 2024</div>
-            </div>
-            <div class="modal-body">
-                <h3>Project Overview</h3>
-                <p>Developed a memory-efficient framework for implementing hyperdimensional computing on hardware. This project formed the foundation for the MEMHD publication, addressing the challenges of mapping high-dimensional vectors to IMC array architectures.</p>
-                
-                <h3>Technologies Used</h3>
-                <ul>
-                    <li>Python / NumPy for HDC modeling</li>
-                    <li>Hardware simulation frameworks</li>
-                    <li>Clustering algorithms for centroid optimization</li>
-                    <li>Quantization-aware training techniques</li>
-                </ul>
-                
-                <h3>Key Achievements</h3>
-                <ul>
-                    <li>Created a novel multi-centroid approach to HDC</li>
-                    <li>Achieved 13.25x memory efficiency improvements</li>
-                    <li>Developed mapping strategies for IMC arrays</li>
-                    <li>Reduced computation cycles by up to 80x</li>
-                </ul>
-                
-                <h3>Links</h3>
-                <p><a href="#">GitHub Repository</a> | <a href="#">Technical Report</a> | <a href="#">Related Paper</a></p>
-            </div>
-        </div>
-    </div>
-
-    <div id="proj3Modal" class="modal">
-        <div class="modal-content">
-            <button class="close-button" onclick="closeModal('proj3')">×</button>
-            <div class="modal-header">
-                <h2 class="modal-title">Mathematical Foundations of Deep Learning</h2>
+                <h2 class="modal-title">제1회 SKKU 자율주행 SW 경진대회 (3rd place)</h2>
                 <div class="modal-subtitle">Mar. 2023 - Dec. 2023</div>
             </div>
             <div class="modal-body">
                 <h3>Project Overview</h3>
-                <p>Conducted research on the mathematical principles underlying deep learning algorithms, exploring connections between neural networks, approximation theory, and optimization. This project leveraged my dual background in mathematics and electrical engineering.</p>
-                
-                <h3>Research Topics</h3>
+                <p>Participated in an autonomous driving competition using children's electric cars equipped with 2D lidar, cameras, and ultrasonic sensors to complete three missions:</p>
                 <ul>
-                    <li>Optimization dynamics in neural networks</li>
-                    <li>Geometric interpretation of neural representations</li>
-                    <li>Information theory perspectives on learning</li>
-                    <li>Probabilistic frameworks for deep models</li>
+                    <li>Mission 1: Autonomous driving on a track for 2 laps</li>
+                    <li>Mission 2: Obstacle avoidance and traffic light detection</li>
+                    <li>Mission 3: Parking between two randomly parked vehicles</li>
                 </ul>
                 
-                <h3>Outcomes</h3>
+                <h3>My Contributions</h3>
                 <ul>
-                    <li>Developed improved mathematical models for network behavior</li>
-                    <li>Created visualization tools for network optimization paths</li>
-                    <li>Identified theoretical connections between model architectures</li>
+                    <li><strong>Vehicle Steering Angle Exploration:</strong> Experimentally determined the relationship between motor speed and steering, converting analog angles to digital values for use as parameters</li>
+                    <li><strong>2D Lidar Sensor Implementation:</strong> Used lidar sensors for obstacle detection and triangulation to identify parking spaces without collisions (achieved highest score among participating teams)</li>
                 </ul>
+                
+                <h3>Results</h3>
+                <p>Secured 3rd place in the competition with particularly strong performance in the parking mission.</p>
                 
                 <h3>Links</h3>
-                <p><a href="#">Project Report</a> | <a href="#">Mathematical Derivations</a> | <a href="#">Visualization Tools</a></p>
+                <p><a href="https://www.youtube.com/live/g6M9_985Jl4?si=ek94oLn6wSLZp_2u&t=15060" target="_blank">Competition Video (4:11:00~4:17:00)</a></p>
             </div>
         </div>
     </div>
@@ -622,3 +545,4 @@
     </script>
 </body>
 </html>
+```
