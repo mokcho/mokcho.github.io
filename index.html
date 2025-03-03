@@ -309,65 +309,6 @@
             font-size: 14px;
         }
 
-        /* Timeline styles */
-        .timeline {
-            position: relative;
-            padding-left: 60px; /* Increased padding to make room for years on left */
-            padding-bottom: 20px;
-            min-height: 200px;
-        }
-
-        .timeline-line {
-            position: absolute;
-            left: 40px; /* Moved to the right to make room for years */
-            top: 30px;
-            bottom: 30px;
-            width: 2px;
-            background-color: var(--white);
-        }
-
-        .timeline-year {
-            position: absolute;
-            left: 10px; /* Positioned to the left of the line */
-            top: 10px;
-            color: var(--white);
-            font-weight: bold;
-        }
-
-        .timeline-year.left {
-            left: 10px;
-            right: auto;
-        }
-
-        .timeline-year.bottom {
-            top: auto;
-            bottom: 10px;
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 50px; /* Increased spacing between items */
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: -14px; /* Adjusted for new timeline position */
-            top: 6px;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background-color: var(--white);
-            border: 2px solid var(--edu-navy);
-        }
-
-        .timeline-content {
-            padding-left: 20px;
-        }
-
-        .timeline-content .card-title {
-            margin-top: 0;
-        }
-
         @media screen and (max-width: 768px) {
             .profile {
                 flex-direction: column;
@@ -387,22 +328,6 @@
             
             .profile-info p {
                 padding-bottom: 0;
-            }
-            
-            .timeline {
-                padding-left: 50px;
-            }
-            
-            .timeline-line {
-                left: 30px;
-            }
-            
-            .timeline-year.left {
-                left: 5px;
-            }
-            
-            .timeline-dot {
-                left: -10px;
             }
         }
     </style>
@@ -453,29 +378,16 @@
             <h2 class="section-title">🎓 Education</h2>
             <div class="card">
                 <div class="card-content">
-                    <div class="timeline">
-                        <div class="timeline-line"></div>
-                        <div class="timeline-year left">2024</div>
-                        <div class="timeline-year left bottom">2018</div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h3 class="card-title">M.S. in Electrical and Computer Engineering</h3>
-                                <div class="card-date">Sep. 2024 - Present</div>
-                                <p class="card-description">Current graduate program focusing on efficient computing architectures</p>
-                            </div>
-                        </div>
-                        
-                        <div class="timeline-item">
-                            <div class="timeline-dot"></div>
-                            <div class="timeline-content">
-                                <h3 class="card-title">B.S. in Mathematics / Electronic and Electrical Engineering</h3>
-                                <div class="card-date">Mar. 2018 - Aug. 2024</div>
-                                <p class="card-description">Dual undergraduate degrees with focus on mathematical foundations and electrical engineering</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="card-title">M.S. in Electrical and Computer Engineering</h3>
+                    <div class="card-date">Sep. 2024 - Present</div>
+                    <p class="card-description">SKKU, IRIS lab (advised by Jong Hwan Ko)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">B.S. in Mathematics / Electronic and Electrical Engineering</h3>
+                    <div class="card-date">Mar. 2018 - Aug. 2024</div>
+                    <p class="card-description">SKKU, Double major</p>
                 </div>
             </div>
         </div>
@@ -561,7 +473,7 @@
                 <p>Hyperdimensional Computing, In-Memory Computing, Multi-Centroid</p>
                 
                 <h3>Links</h3>
-                <p><a href="#">View Paper</a> | <a href="#">Code</a> | <a href="#">Presentation</a></p>
+                <p><a href="https://www.arxiv.org/abs/2502.07834" target="_blank">View Paper</a></p>
             </div>
         </div>
     </div>
