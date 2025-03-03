@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -324,6 +325,98 @@
                 padding-bottom: 0;
             }
         }
+        
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+            padding-bottom: 20px;
+            min-height: 300px;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 15px;
+            top: 30px;
+            bottom: 30px;
+            width: 2px;
+            background-color: var(--white);
+        }
+
+        .timeline-arrow {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            font-size: 20px;
+            color: var(--white);
+        }
+
+        .timeline-year {
+            position: absolute;
+            left: 25px;
+            top: 10px;
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        .timeline-year.bottom {
+            top: auto;
+            bottom: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item.current .timeline-content {
+            border-left: 3px solid #ffcc00;
+            padding-left: 17px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -34px;
+            top: 6px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 2px solid var(--navy);
+        }
+
+        .timeline-content {
+            padding-left: 20px;
+        }
+
+        .timeline-content .card-title {
+            margin-top: 0;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline {
+                padding-left: 30px;
+            }
+            
+            .timeline-line {
+                left: 10px;
+            }
+            
+            .timeline-arrow {
+                left: 5px;
+            }
+            
+            .timeline-year {
+                left: 20px;
+                font-size: 14px;
+            }
+            
+            .timeline-dot {
+                left: -24px;
+                width: 10px;
+                height: 10px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -370,25 +463,41 @@
     <section id="education">
         <div class="container">
             <h2 class="section-title">🎓 Education</h2>
-            <div class="card" style="background-color: var(--navy); opacity: 0.95;">
-                <div class="card-content">
-                    <h3 class="card-title">M.S. in Electrical and Computer Engineering</h3>
-                    <div class="card-date">Sep. 2024 - Present</div>
-                    <p class="card-description">Current graduate program focusing on efficient computing architectures</p>
-                </div>
-            </div>
             <div class="card">
                 <div class="card-content">
-                    <h3 class="card-title">B.S. in Electronic and Electrical Engineering</h3>
-                    <div class="card-date">Mar. 2018 - Aug. 2024</div>
-                    <p class="card-description">Undergraduate degree in Electronic and Electrical Engineering</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="card-title">B.S. in Mathematics</h3>
-                    <div class="card-date">Mar. 2018 - Aug. 2024</div>
-                    <p class="card-description">Undergraduate degree with focus on mathematical foundations</p>
+                    <div class="timeline">
+                        <div class="timeline-line"></div>
+                        <div class="timeline-arrow">↑</div>
+                        <div class="timeline-year">2024</div>
+                        <div class="timeline-year bottom">2018</div>
+                        
+                        <div class="timeline-item current">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="card-title">M.S. in Electrical and Computer Engineering</h3>
+                                <div class="card-date">Sep. 2024 - Present</div>
+                                <p class="card-description">Current graduate program focusing on efficient computing architectures</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="card-title">B.S. in Electronic and Electrical Engineering</h3>
+                                <div class="card-date">Mar. 2018 - Aug. 2024</div>
+                                <p class="card-description">Undergraduate degree in Electronic and Electrical Engineering</p>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3 class="card-title">B.S. in Mathematics</h3>
+                                <div class="card-date">Mar. 2018 - Aug. 2024</div>
+                                <p class="card-description">Undergraduate degree with focus on mathematical foundations</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -412,9 +521,16 @@
             <h2 class="section-title">🎯 Project</h2>
             <div class="card clickable" onclick="openModal('proj1')">
                 <div class="card-content">
-                    <h3 class="card-title">제1회 SKKU 자율주행 SW 경진대회 (3rd place)</h3>
+                    <h3 class="card-title">1st SKKU Autonomous Driving SW Competition (3rd place)</h3>
                     <div class="card-date">Mar. 2023 - Dec. 2023</div>
                     <p class="card-description">Autonomous driving software competition using electric cars with sensors to complete three challenging missions.</p>
+                </div>
+            </div>
+            <div class="card clickable" onclick="openModal('proj2')">
+                <div class="card-content">
+                    <h3 class="card-title">Cross-disciplinary Research Award (2nd place)</h3>
+                    <div class="card-date">2023</div>
+                    <p class="card-description">Research on optimization of Once-for-All-Network Training, collaborating with students from Mathematics, Electronics and Electrical Engineering, and Mechanical Engineering.</p>
                 </div>
             </div>
         </div>
@@ -476,7 +592,7 @@
         <div class="modal-content">
             <button class="close-button" onclick="closeModal('proj1')">×</button>
             <div class="modal-header">
-                <h2 class="modal-title">제1회 SKKU 자율주행 SW 경진대회 (3rd place)</h2>
+                <h2 class="modal-title">1st SKKU Autonomous Driving SW Competition (3rd place)</h2>
                 <div class="modal-subtitle">Mar. 2023 - Dec. 2023</div>
             </div>
             <div class="modal-body">
@@ -499,6 +615,37 @@
                 
                 <h3>Links</h3>
                 <p><a href="https://www.youtube.com/live/g6M9_985Jl4?si=ek94oLn6wSLZp_2u&t=15060" target="_blank">Competition Video (4:11:00~4:17:00)</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="proj2Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('proj2')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Cross-disciplinary Research Award (2nd place)</h2>
+                <div class="modal-subtitle">2023</div>
+            </div>
+            <div class="modal-body">
+                <h3>Project Overview</h3>
+                <p>Conducted collaborative research with students from various disciplines including Mathematics, Electronics and Electrical Engineering, and Mechanical Engineering.</p>
+                
+                <h3>Research Topic</h3>
+                <p>Optimization of Training for Once-for-All-Networks:</p>
+                <ul>
+                    <li>Shared a single BatchNorm layer across all bit precision levels to maintain accuracy while reducing training time</li>
+                    <li>Analyzed the impact of Quantization Aware Training (QAT) on weights, confirming different output distributions before and after quantization</li>
+                    <li>Implemented Weight Bias Correction to maintain consistent output distribution</li>
+                    <li>Achieved 20% reduction in overall training time while maintaining accuracy</li>
+                </ul>
+                
+                <h3>My Contributions</h3>
+                <ul>
+                    <li>Provided mathematical background for convolution operations between distributions and bias correction</li>
+                </ul>
+                
+                <h3>Links</h3>
+                <p><a href="https://www.skku.edu/skku/campus/skk_comm/news.do?mode=view&articleNo=118941" target="_blank">SKKU News Article</a></p>
             </div>
         </div>
     </div>
