@@ -6,9 +6,10 @@
     <title>ML Researcher Portfolio</title>
     <style>
         :root {
-            --navy: #1a2a40;
-            --light-navy: #2a3a50;
-            --lightest-navy: #374560;
+            --navy: #223048;  /* Lighter navy color */
+            --light-navy: #2e3a54;
+            --lightest-navy: #3c4a64;
+            --activity-blue: #2c5282;  /* Different blue for Other Activities */
             --white: #ffffff;
             --black: #000000;
         }
@@ -107,6 +108,7 @@
         .profile-info {
             flex: 1;
             min-width: 300px;
+            position: relative;
         }
 
         .profile-info h1 {
@@ -118,22 +120,36 @@
         .profile-info p {
             color: var(--black);
             margin-bottom: 15px;
+            padding-bottom: 50px; /* Make space for the social icons */
         }
 
         .social-links {
             display: flex;
-            gap: 15px;
+            gap: 20px;
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
         }
 
         .social-links a {
             color: var(--navy);
             text-decoration: none;
             transition: opacity 0.3s ease;
-            font-size: 24px;
+            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
         }
 
         .social-links a:hover {
             opacity: 0.7;
+            background-color: #e0e0e0;
         }
 
         section {
@@ -165,6 +181,11 @@
             overflow: hidden;
             margin-bottom: 20px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Special color for Other Activities cards */
+        #activities .card {
+            background-color: var(--activity-blue);
         }
 
         .card-content {
@@ -298,7 +319,12 @@
             }
             
             .social-links {
-                justify-content: center;
+                position: static;
+                margin-top: 15px;
+            }
+            
+            .profile-info p {
+                padding-bottom: 0;
             }
         }
     </style>
@@ -314,10 +340,10 @@
                     <h1>Do Yeong Kang</h1>
                     <p>Hello! I'm a graduate student researching Machine Learning and Electrical Engineering. Currently, I'm conducting research on efficient computing architectures for AI applications. I'm passionate about developing innovative solutions at the intersection of hardware and algorithms.</p>
                     <div class="social-links">
-                        <a href="#" title="GitHub">G</a>
-                        <a href="#" title="LinkedIn">L</a>
-                        <a href="#" title="CV">C</a>
-                        <a href="#" title="Email">E</a>
+                        <a href="#" title="GitHub">💻</a>
+                        <a href="#" title="LinkedIn">🔗</a>
+                        <a href="#" title="CV">📄</a>
+                        <a href="#" title="Email">✉️</a>
                     </div>
                 </div>
             </div>
@@ -407,7 +433,7 @@
             <h2 class="section-title">Other Activities</h2>
             <div class="card">
                 <div class="card-content">
-                    <h3 class="card-title">📚Education</h3>
+                    <h3 class="card-title">📚 Education</h3>
                     <div class="card-date">Mar. 2018 - Aug. 2024</div>
                     <p class="card-description">Tutored 15+ students in Korean SAT mathematics (Calculus, Probability and Geometry). </p>
                     <p class="card-description">Ranked in the top 5% of tutors in Seoul/Gyeonggi area (2022, 2023).</p>
@@ -415,14 +441,14 @@
             </div>
             <div class="card">
                 <div class="card-content">
-                    <h3 class="card-title">🪖Military Service</h3>
+                    <h3 class="card-title">🪖 Military Service</h3>
                     <div class="card-date">Oct. 2020 - Apr. 2022</div>
                     <p class="card-description">Served as KATUSA (Korean Augmentation To the United States Army).</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-content">
-                    <h3 class="card-title">🐶Animal Shelter Volunteering</h3>
+                    <h3 class="card-title">🐶 Animal Shelter Volunteering</h3>
                     <div class="card-date">Aug. 2022 - Aug. 2024</div>
                     <p class="card-description">Volunteer work at animal shelters for abandoned dogs and cats through university club Irion.</p>
                 </div>
