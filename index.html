@@ -3,122 +3,607 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 이름 - 포트폴리오</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>ML 연구자 포트폴리오</title>
+    <style>
+        :root {
+            --navy: #0a192f;
+            --light-navy: #112240;
+            --lightest-navy: #233554;
+            --white: #e6f1ff;
+            --light-white: #ccd6f6;
+            --lightest-white: #8892b0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+        }
+
+        body {
+            background-color: var(--navy);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        header {
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .navbar {
+            background-color: var(--navy);
+            position: sticky;
+            top: 0;
+            padding: 15px 0;
+            z-index: 100;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin: 0 20px;
+        }
+
+        .navbar ul li a {
+            color: var(--light-white);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: var(--white);
+        }
+
+        .navbar ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        .navbar ul li a:hover::after {
+            width: 100%;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: var(--light-white);
+            margin-right: 30px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-info h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .profile-info p {
+            color: var(--light-white);
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: var(--light-white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 24px;
+        }
+
+        .social-links a:hover {
+            color: var(--white);
+        }
+
+        section {
+            padding: 50px 0;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            position: relative;
+            text-align: center;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--white);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: var(--light-navy);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .card-date {
+            font-size: 14px;
+            color: var(--lightest-white);
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            color: var(--light-white);
+            font-size: 15px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: var(--light-navy);
+            margin: 50px auto;
+            padding: 30px;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: var(--light-white);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .modal-subtitle {
+            color: var(--light-white);
+            font-size: 16px;
+        }
+
+        .modal-body {
+            color: var(--light-white);
+        }
+
+        .modal-body h3 {
+            color: var(--white);
+            margin: 20px 0 10px;
+        }
+
+        .modal-body p {
+            margin-bottom: 15px;
+        }
+
+        .modal-body ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .modal-body a {
+            color: var(--white);
+            text-decoration: underline;
+        }
+
+        footer {
+            background-color: var(--light-navy);
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .copyright {
+            color: var(--lightest-white);
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .profile {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .profile-image {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <header>
+    <header>
+        <div class="container">
             <div class="profile">
-                <img src="images/profile.jpg" alt="프로필 사진" class="profile-img">
-            </div>
-            <h1>홍길동</h1>
-            <div class="title">웹 개발자 & 디자이너</div>
-            <div class="social-links">
-                <a href="https://github.com/yourusername" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://twitter.com/yourusername" title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="https://medium.com/@yourusername" title="Medium"><i class="fab fa-medium"></i></a>
-                <a href="https://yourblog.com" title="Blog"><i class="fas fa-globe"></i></a>
-                <a href="https://linkedin.com/in/yourusername" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:your.email@example.com" title="Email"><i class="fas fa-envelope"></i></a>
-            </div>
-        </header>
-
-        <section class="summary">
-            <p>
-                이것은 자기소개 요약입니다. 전문적인 맥락에서 자신에 대한 간결하고 의미 있는 문장 몇 개와
-                직속 경력 목표를 작성하세요. 필요에 맞게 길이를 조정하되 간결하게 유지하세요.
-            </p>
-            <div class="contact-btn">
-                <a href="mailto:your.email@example.com">Contact me</a>
-            </div>
-        </section>
-
-        <hr>
-
-        <section class="experience">
-            <h2>Experience</h2>
-            <hr>
-
-            <div class="job">
-                <h3>회사명</h3>
-                <div class="job-info">
-                    <div class="job-title">직책</div>
-                    <div class="job-date">2020년 1월 - 현재</div>
+                <div class="profile-image">
+                    <img src="/api/placeholder/120/120" alt="프로필 사진">
                 </div>
-                <p>
-                    이 직책에서의 핵심 역량에 대해 한두 문장으로 설명하세요. 직책을 오랫동안 맡았다면
-                    여러 글머리 기호를 포함하여 더 긴 섹션이 될 수 있습니다.
-                </p>
+                <div class="profile-info">
+                    <h1>홍길동</h1>
+                    <p>안녕하세요! 저는 컴퓨터 비전과 딥러닝을 연구하는 대학원생입니다. 현재 [대학교 이름]에서 [연구 분야]에 관한 연구를 진행하고 있으며, 인공지능 기술을 통해 실생활의 문제를 해결하는 데 관심이 있습니다.</p>
+                    <div class="social-links">
+                        <a href="#" title="GitHub">G</a>
+                        <a href="#" title="LinkedIn">L</a>
+                        <a href="#" title="CV">C</a>
+                        <a href="#" title="Email">E</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#publication">Publication</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#post">Post</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="cards">
+                <div class="card" onclick="openModal('edu1')">
+                    <div class="card-content">
+                        <h3 class="card-title">Ph.D. in Computer Science</h3>
+                        <div class="card-date">2022 - 현재</div>
+                        <p class="card-description">서울대학교 컴퓨터공학과 박사과정</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('edu2')">
+                    <div class="card-content">
+                        <h3 class="card-title">M.S. in Computer Science</h3>
+                        <div class="card-date">2020 - 2022</div>
+                        <p class="card-description">서울대학교 컴퓨터공학과 석사</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('edu3')">
+                    <div class="card-content">
+                        <h3 class="card-title">B.S. in Computer Science</h3>
+                        <div class="card-date">2016 - 2020</div>
+                        <p class="card-description">한국대학교 컴퓨터공학과 학사</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publication">
+        <div class="container">
+            <h2 class="section-title">Publication</h2>
+            <div class="cards">
+                <div class="card" onclick="openModal('pub1')">
+                    <div class="card-content">
+                        <h3 class="card-title">Advances in Computer Vision Using Neural Networks</h3>
+                        <div class="card-date">2023 - CVPR</div>
+                        <p class="card-description">딥러닝을 활용한 컴퓨터 비전 기술의 발전에 관한 연구</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('pub2')">
+                    <div class="card-content">
+                        <h3 class="card-title">Improved Object Detection with Low-resource Computing</h3>
+                        <div class="card-date">2022 - ICCV</div>
+                        <p class="card-description">저사양 컴퓨팅 환경에서의 효율적인 객체 검출 알고리즘</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('pub3')">
+                    <div class="card-content">
+                        <h3 class="card-title">Multi-modal Learning for Medical Image Analysis</h3>
+                        <div class="card-date">2021 - MICCAI</div>
+                        <p class="card-description">의료 영상 분석을 위한 멀티모달 학습 방법론</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="project">
+        <div class="container">
+            <h2 class="section-title">Project</h2>
+            <div class="cards">
+                <div class="card" onclick="openModal('proj1')">
+                    <div class="card-content">
+                        <h3 class="card-title">실시간 객체 인식 시스템</h3>
+                        <div class="card-date">2023.01 - 2023.06</div>
+                        <p class="card-description">모바일 기기에서 동작하는 경량화된 실시간 객체 인식 시스템 개발</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('proj2')">
+                    <div class="card-content">
+                        <h3 class="card-title">의료 영상 세분화 모델</h3>
+                        <div class="card-date">2022.03 - 2022.12</div>
+                        <p class="card-description">MRI 영상에서 종양을 자동으로 세분화하는 딥러닝 모델 개발</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('proj3')">
+                    <div class="card-content">
+                        <h3 class="card-title">자율주행 시뮬레이션</h3>
+                        <div class="card-date">2021.05 - 2021.11</div>
+                        <p class="card-description">강화학습을 활용한 자율주행 알고리즘 시뮬레이션 환경 구축</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="post">
+        <div class="container">
+            <h2 class="section-title">Post</h2>
+            <div class="cards">
+                <div class="card" onclick="openModal('post1')">
+                    <div class="card-content">
+                        <h3 class="card-title">Vision Transformer의 이해와 활용</h3>
+                        <div class="card-date">2023.11.15</div>
+                        <p class="card-description">비전 트랜스포머의 기본 원리와 실제 적용 사례에 대한 설명</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('post2')">
+                    <div class="card-content">
+                        <h3 class="card-title">효율적인 딥러닝 모델 최적화 방법</h3>
+                        <div class="card-date">2023.08.22</div>
+                        <p class="card-description">모델 경량화와 양자화를 통한 딥러닝 모델 최적화 전략</p>
+                    </div>
+                </div>
+                <div class="card" onclick="openModal('post3')">
+                    <div class="card-content">
+                        <h3 class="card-title">대학원생을 위한 연구 팁</h3>
+                        <div class="card-date">2023.04.10</div>
+                        <p class="card-description">ML/AI 분야 대학원생이 알아두면 좋을 연구 및 논문 작성 팁</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal windows for details -->
+    <div id="edu1Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('edu1')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Ph.D. in Computer Science</h2>
+                <div class="modal-subtitle">2022 - 현재 | 서울대학교 컴퓨터공학과</div>
+            </div>
+            <div class="modal-body">
+                <h3>연구 분야</h3>
+                <p>컴퓨터 비전, 딥러닝, 영상 처리</p>
+                
+                <h3>주요 과목</h3>
                 <ul>
-                    <li>자랑스러운 프로젝트</li>
-                    <li>또 다른 멋진 프로젝트</li>
-                    <li>함께 일한 팀이나 부서</li>
+                    <li>고급 컴퓨터 비전</li>
+                    <li>딥러닝 특론</li>
+                    <li>인공지능 세미나</li>
+                    <li>고급 머신러닝</li>
                 </ul>
+                
+                <h3>연구실</h3>
+                <p>인공지능 연구실 (지도교수: 김교수)</p>
+                
+                <h3>연구 주제</h3>
+                <p>저자원 환경에서의 효율적인 컴퓨터 비전 알고리즘 개발에 관한 연구를 수행하고 있습니다.</p>
             </div>
-
-            <div class="job">
-                <h3>이전 회사명</h3>
-                <div class="job-info">
-                    <div class="job-title">이전 직책</div>
-                    <div class="job-date">2018년 6월 - 2019년 12월</div>
-                </div>
-                <p>
-                    근무 기간이 짧았다면 간결하게 작성하고 역할에서 가장 의미 있는 부분만 언급하세요.
-                    독자는 당신의 경험에 대해 더 알아보기 위한 충분한 정보만 필요합니다.
-                </p>
-            </div>
-
-            <div class="job">
-                <h3>첫 회사명</h3>
-                <div class="job-info">
-                    <div class="job-title">첫 직책</div>
-                    <div class="job-date">2016년 3월 - 2018년 5월</div>
-                </div>
-                <p>
-                    디지털 및 전통 미디어 채널을 통한 마케팅 및 홍보를 위한 커뮤니케이션 활동을 주도하고,
-                    내부 커뮤니케이션 전략을 수립하며, 센터 서비스 수혜자를 위한 지원 프로그램을 조정했습니다.
-                </p>
-            </div>
-        </section>
-
-        <hr>
-
-        <section class="education">
-            <h2>Education</h2>
-            <hr>
-
-            <div class="school">
-                <h3>대학교명</h3>
-                <div class="school-info">
-                    <div class="degree">학위명</div>
-                    <div class="school-date">2012년 3월 - 2016년 2월</div>
-                </div>
-                <p>
-                    교육 경험에 대한 간략한 설명. 주요 과목, 학점, 받은 상이나 장학금에 대해 언급할 수 있습니다.
-                </p>
-            </div>
-        </section>
-
-        <hr>
-
-        <section class="skills">
-            <h2>Skills</h2>
-            <hr>
-
-            <div class="skills-container">
-                <div class="skill">HTML & CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">React</div>
-                <div class="skill">Node.js</div>
-                <div class="skill">Git</div>
-                <div class="skill">UI/UX Design</div>
-            </div>
-        </section>
+        </div>
     </div>
 
-    <script src="script.js"></script>
+    <div id="pub1Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('pub1')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Advances in Computer Vision Using Neural Networks</h2>
+                <div class="modal-subtitle">2023 - CVPR</div>
+            </div>
+            <div class="modal-body">
+                <h3>저자</h3>
+                <p>홍길동, 김연구, 이교수</p>
+                
+                <h3>초록</h3>
+                <p>본 연구에서는 최신 신경망 기술을 활용한 컴퓨터 비전 분야의 발전에 대해 탐구합니다. 특히, 트랜스포머 기반 아키텍처를 활용한 새로운 접근 방식을 제안하고, 기존 CNN 기반 모델과의 성능을 비교 분석합니다. 실험 결과, 제안된 방법은 이미지 분류, 객체 검출, 세분화 등 다양한 컴퓨터 비전 작업에서 우수한 성능을 보였습니다.</p>
+                
+                <h3>키워드</h3>
+                <p>컴퓨터 비전, 딥러닝, 트랜스포머, 이미지 인식</p>
+                
+                <h3>링크</h3>
+                <p><a href="#">논문 보기</a> | <a href="#">코드</a> | <a href="#">발표 자료</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="proj1Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('proj1')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">실시간 객체 인식 시스템</h2>
+                <div class="modal-subtitle">2023.01 - 2023.06</div>
+            </div>
+            <div class="modal-body">
+                <h3>프로젝트 소개</h3>
+                <p>모바일 기기와 같은 저사양 환경에서도 효율적으로 동작할 수 있는 실시간 객체 인식 시스템을 개발했습니다. 모델 경량화, 양자화, 지식 증류 등 다양한 최적화 기법을 적용했습니다.</p>
+                
+                <h3>사용 기술</h3>
+                <ul>
+                    <li>PyTorch / TensorFlow Lite</li>
+                    <li>YOLOv5 / MobileNet</li>
+                    <li>모델 경량화 및 양자화</li>
+                    <li>Android / iOS 애플리케이션 개발</li>
+                </ul>
+                
+                <h3>주요 성과</h3>
+                <ul>
+                    <li>기존 모델 대비 10배 이상 경량화 달성</li>
+                    <li>스마트폰에서 초당 30프레임 이상의 처리 속도 달성</li>
+                    <li>정확도 손실 5% 미만으로 유지</li>
+                </ul>
+                
+                <h3>링크</h3>
+                <p><a href="#">GitHub 저장소</a> | <a href="#">데모 영상</a> | <a href="#">기술 문서</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="post1Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('post1')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Vision Transformer의 이해와 활용</h2>
+                <div class="modal-subtitle">2023.11.15</div>
+            </div>
+            <div class="modal-body">
+                <h3>소개</h3>
+                <p>이 글에서는 최근 컴퓨터 비전 분야에서 주목받고 있는 Vision Transformer(ViT)의 기본 원리와 실제 적용 사례에 대해 알아봅니다.</p>
+                
+                <h3>Vision Transformer의 기본 구조</h3>
+                <p>Vision Transformer는 자연어 처리에서 큰 성공을 거둔 트랜스포머 아키텍처를 이미지 처리에 적용한 모델입니다. 기존의 CNN과 달리, 이미지를 패치 단위로 분할하여 각 패치를 토큰으로 간주하고 이를 트랜스포머 인코더에 입력합니다...</p>
+                
+                <h3>장단점 분석</h3>
+                <p>ViT의 주요 장점은 글로벌 컨텍스트를 효과적으로 캡처할 수 있다는 점입니다. 반면, 데이터가 적은 환경에서는 과적합 문제가 발생할 수 있으며, 계산 복잡도가 높다는 단점이 있습니다...</p>
+                
+                <h3>실제 적용 사례</h3>
+                <ul>
+                    <li>이미지 분류: ImageNet에서 SOTA 성능 달성</li>
+                    <li>객체 검출: DETR, Deformable DETR 등</li>
+                    <li>세분화: SegFormer, Mask2Former 등</li>
+                </ul>
+                
+                <h3>전체 글 읽기</h3>
+                <p><a href="#">블로그에서 전체 글 읽기</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 기타 모달 윈도우들... -->
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2025 홍길동. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 모달 열기
+        function openModal(id) {
+            document.getElementById(id + 'Modal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // 배경 스크롤 방지
+        }
+
+        // 모달 닫기
+        function closeModal(id) {
+            document.getElementById(id + 'Modal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // 배경 스크롤 허용
+        }
+
+        // 스무스 스크롤
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 모달 외부 클릭 시 닫기
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
 </body>
 </html>
