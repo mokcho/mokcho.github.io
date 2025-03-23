@@ -296,6 +296,21 @@
             text-decoration: underline;
         }
 
+        .btn {
+            display: inline-block;
+            background-color: var(--navy);
+            color: var(--white);
+            padding: 8px 16px;
+            margin-right: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: var(--light-navy);
+        }
+
         footer {
             background-color: var(--navy);
             padding: 20px 0;
@@ -473,7 +488,10 @@
                 <p>Hyperdimensional Computing, In-Memory Computing, Multi-Centroid</p>
                 
                 <h3>Links</h3>
-                <p><a href="https://www.arxiv.org/abs/2502.07834" target="_blank">View Paper</a></p>
+                <p>
+                    <a href="https://www.arxiv.org/abs/2502.07834" target="_blank" class="btn">View Paper</a>
+                    <a href="https://drive.google.com/file/d/1KP-csZMp8lb5LWz71ak0YbPxBrFktBW_/view?usp=drive_link" target="_blank" class="btn">View Poster</a>
+                </p>
             </div>
         </div>
     </div>
