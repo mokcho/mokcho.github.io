@@ -6,10 +6,10 @@
     <title>Jinju (Pearl) Kim</title>
     <style>
         :root {
-            --navy: #2c3e50;  /* Lighter navy color */
-            --light-navy: #3a4e61;
-            --lightest-navy: #4a5e70;
-            --edu-navy: #34495e; /* Lighter color for education box */
+            --navy: #657e57;  /* Lighter navy color */
+            --light-navy: #72a971;
+            --lightest-navy: #7fab6f;
+            --edu-navy: #75894b; /* Lighter color for education box */
             --activity-blue: #2c5282;  /* Different blue for Other Activities */
             --white: #ffffff;
             --black: #000000;
@@ -91,10 +91,12 @@
             flex-wrap: wrap;
         }
 
+        .highlight { color:#5E8040; font-weight:600; }
+
         .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            border-radius: 30%;
             overflow: hidden;
             margin-right: 30px;
             flex-shrink: 0;
@@ -356,15 +358,12 @@
                 </div>
                 <div class="profile-info">
                     <h1>Jinju (Pearl) Kim</h1>
-                    <p>Hello, I am an incoming visiting researcher at Carnegie Mellon University (CMU) LTI advised by Prof. Bhiksha Raj <a href="https://cmu-mlsp.github.io/team/" target="_blank" style="color: inherit; text-decoration: underline;">MLSP Group</a>.
-                        I'm pursuing an M.S. in Electrical and Computer Engineering at Sungkyunkwan University (SKKU), advised by Prof. Jong Hwan Ko at <a href="https://iris.skku.edu/" target="_blank" style="color: inherit; text-decoration: underline;">IRIS Lab</a>. 
-                        I am also collaborating with CMU LTI's Prof. David R. Mortensen of <a href="https://changelinglab.github.io/" target="_blank" style="color: inherit; text-decoration: underline;">ChangeLing Lab</a>.
+                    <p>Hello, I am an incoming visiting researcher at Carnegie Mellon University (CMU) LTI advised by Prof. Bhiksha Raj <a href="https://cmu-mlsp.github.io/team/" target="_blank" style="color: #5E8040; text-decoration: underline;">MLSP Group</a>.
+                        I'm pursuing an M.S. in Electrical and Computer Engineering at Sungkyunkwan University (SKKU), advised by Prof. Jong Hwan Ko at <a href="https://iris.skku.edu/" target="_blank" style="color: #5E8040; text-decoration: underline;">IRIS Lab</a>. 
+                        I am also collaborating with CMU LTI's Prof. David R. Mortensen of <a href="https://changelinglab.github.io/" target="_blank" style="color: #5E8040; text-decoration: underline;">ChangeLing Lab</a>.
                     </p>
                     <p>
                         My research is motivated by Efficient, Reliable, and Accessible Speech & Language Systems to respect and reflect human diversity -  <strong>Machine Unlearning for AI safety and privacy</strong>, <strong>Generalization for Low-Resource Language Varieties</strong>. 
-                    </p>
-                    <p>
-                        I love outdoor climbing, lead climbing - indoor bouldering? meh.
                     </p>
                     <div class="social-links">
                         <a href="/files/Jinju_Kim_CV.pdf" title="CV">
@@ -408,7 +407,7 @@
             </div>    
             <div class="card">
                 <div class="card-content">
-                    <h3 class="card-title">Visiting Fellow @ Carnegie Mellon Univ. LTI</h3>
+                    <h3 class="card-title">Visiting Researcher @ Carnegie Mellon Univ. LTI</h3>
                     <div class="card-date">Aug. 2024 - Present (in-person & remote)</div>
                     <p class="card-description">ChangeLing Lab (advised by David R. Mortensen)</p>
                 </div>
@@ -437,28 +436,29 @@
                 <div class="card-content">
                     <h3 class="card-title">[C2]Do Not Mimic My Voice : Speaker Identity Unlearning for Zero-Shot Text-to-Speech</h3>
                     <div class="card-date">Dual Acceptation to ICML 2025,  MuGen X ICML 2025 Oral</div>
-                    <p class="card-description">Novel framework for efficient Hyperdimensional Computing on In-Memory Computing architectures.</p>
+                    <p class="card-description">First work on applying Machine Unlearning to Speech Synthesis - defined Speaker Identity Unlearning, 
+                        proposed novel framework and metric : Teacher-Guided Unlerning and spk-ZRF with extensive experiments.</p>
                 </div>
             </div>
             <div class="card clickable" onclick="openModal('pub1')">
                 <div class="card-content">
                     <h3 class="card-title">[C1]Domain-Specific Multilingual Strategies for Medical NLP: A Cross-Lingual Analysis of Orthographic and Phonemic Representations</h3>
                     <div class="card-date">IEEE EMBC 2025</div>
-                    <p class="card-description">Novel framework for efficient Hyperdimensional Computing on In-Memory Computing architectures.</p>
+                    <p class="card-description">Analysis on different phonemic representations on Multilingual NLP</p>
                 </div>
             </div>
             <div class="card clickable" onclick="openModal('pub4')">
                 <div class="card-content">
                     <h3 class="card-title">[U2](Paper on Cognitive Linguistics & Zero-Shot Performance on Low-Resource Varieties)</h3>
                     <div class="card-date">Under Review</div>
-                    <p class="card-description">Novel framework for efficient Hyperdimensional Computing on In-Memory Computing architectures.</p>
+                    <p class="card-description">To be Updated</p>
                 </div>
             </div>
             <div class="card clickable" onclick="openModal('pub3')">
                 <div class="card-content">
                     <h3 class="card-title">[U1](Paper on Zero-Shot Multilingual Performance via Phonemics)</h3>
                     <div class="card-date">Under Review</div>
-                    <p class="card-description">Novel framework for efficient Hyperdimensional Computing on In-Memory Computing architectures.</p>
+                    <p class="card-description">To be Updated</p>
                 </div>
             </div>
         </div>
@@ -492,14 +492,14 @@
             <div class="card clickable" onclick="openModal('proj2')">
                 <div class="card-content">
                     <h3 class="card-title">Audio Compression for Machines</h3>
-                    <div class="card-date">May. 2025 - Present</div>
-                    <p class="card-description">Autonomous driving software competition using electric cars with sensors to complete three challenging missions.</p>
+                    <div class="card-date">ETRI, May. 2025 - Present</div>
+                    <p class="card-description">Led research on attaching lightweight adapters to Audio Codecs for machine tasks.</p>
                 </div>
             </div>
             <div class="card clickable" onclick="openModal('proj1')">
                 <div class="card-content">
                     <h3 class="card-title">Speech Command Real-Time Targeting & Fire AI Cannon for Moving Objects</h3>
-                    <div class="card-date">Oct. 2024 - Feb. 2025</div>
+                    <div class="card-date">SolvIT Inc., Oct. 2024 - Feb. 2025</div>
                     <p class="card-description">Developed speech command pipeline as NLP developer - including but not limited to : Voice Activity Detection, Real-Time Automatic Speech Recognition</p>
                 </div>
             </div>
@@ -511,22 +511,7 @@
             <h2 class="section-title">🏃🏻‍♂️ Other Activities</h2>
             <div class="card">
                 <div class="card-content">
-                    <h3 class="card-title">📚 Education</h3>
-                    <div class="card-date">Mar. 2018 - Aug. 2024</div>
-                    <p class="card-description">Tutored 15+ students in Korean SAT mathematics (Calculus, Probability and Geometry). </p>
-                    <p class="card-description">Ranked in the top 5% of tutors in Seoul/Gyeonggi area (2022, 2023).</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="card-title">🪖 Military Service</h3>
-                    <div class="card-date">Oct. 2020 - Apr. 2022</div>
-                    <p class="card-description">Served as KATUSA (Korean Augmentation To the United States Army).</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="card-title">🐶 Rock Climbing</h3>
+                    <h3 class="card-title">Rock Climbing</h3>
                     <div class="card-date">Feb. 2023 - Present</div>
                     <p class="card-description">single-pitch and multi-pitch, I don't climb plastics.</p>
                 </div>
@@ -535,6 +520,82 @@
     </section>
 
     <!-- Modal windows for details -->
+    <div id="pub4Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('pub4')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">(Paper on Cognitive Linguistics & Zero-Shot Performance on Low-Resource Varieties)</h2>
+                <div class="modal-subtitle">Under Review</div>
+            </div>
+            <div class="modal-body">
+                <h3>Authors</h3>
+                <p>Jinju Kim, Haeji Jung, Youjeong Roh, Jong Hwan Ko, and David R. Mortensen</p>
+                
+                <h3>Abstract</h3>
+                <p>to be updated</p>
+
+                <h3>Keywords</h3>
+                <p>to be updated</p>
+                
+                <!-- <h3>Links</h3>
+                <p>
+                </p> -->
+            </div>
+        </div>
+    </div>
+    <div id="pub3Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('pub3')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">(Paper on Zero-Shot Multilingual Performance via Phonemics)</h2>
+                <div class="modal-subtitle">Under Review</div>
+            </div>
+            <div class="modal-body">
+                <h3>Authors</h3>
+                <p>Haeji Jung, Jinju Kim, Kyungjin Kim, Youjeong Roh, and David R. Mortensen</p>
+                
+                <h3>Abstract</h3>
+                <p>to be updated</p>
+
+                <h3>Keywords</h3>
+                <p>to be updated</p>
+                
+                <!-- <h3>Links</h3>
+                <p>
+                </p> -->
+            </div>
+        </div>
+    </div>
+
+    <div id="pub2Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('pub2')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Do Not Mimic My Voice : Speaker Identity Unlearning for Zero-Shot Text-to-Speech</h2>
+                <div class="modal-subtitle">ICML 2025</div>
+            </div>
+            <div class="modal-body">
+                <h3>Authors</h3>
+                <p>Jinju Kim*, Taesoo Kim*, Dong Chan Kim, Jong Hwan Ko, and Gyeong-Moon Park</p>
+                
+                <h3>Abstract</h3>
+                <p>The rapid advancement of Zero-Shot Text-to-Speech (ZS-TTS) technology has enabled high-fidelity voice synthesis from minimal audio cues, raising significant privacy and ethical concerns. Despite the threats to voice privacy, research to selectively remove the knowledge to replicate unwanted individual voices from pre-trained model parameters has not been explored. In this paper, we address the new challenge of speaker identity unlearning for ZS-TTS systems. To meet this goal, we propose the first machine unlearning frameworks for ZS-TTS, especially Teacher-Guided Unlearning (TGU), designed to ensure the model forgets designated speaker identities while retaining its ability to generate accurate speech for other speakers. Our proposed methods incorporate randomness to prevent consistent replication of forget speakers' voices, assuring unlearned identities remain untraceable. Additionally, we propose a new evaluation metric, speaker-Zero Retrain Forgetting (spk-ZRF). This assesses the model's ability to disregard prompts associated with forgotten speakers, effectively neutralizing its knowledge of these voices. The experiments conducted on the state-of-the-art model demonstrate that TGU prevents the model from replicating forget speakers' voices while maintaining high quality for other speakers.The demo is available at https://speechunlearn.github.io/ .</p>
+                
+                <h3>Keywords</h3>
+                <p>Machine Unlearning, Generative Unlearning, Voice Privacy, Zero-Shot Text-to-Speech</p>
+                
+                <h3>Links</h3>
+                <p>
+                    <a href="https://openreview.net/forum?id=1EgFJDjodU" target="_blank">paper(ICML Main)</a> |
+                    <a href="https://openreview.net/forum?id=m7mc0xQi1y&nesting=2&sort=date-desc" target="_blank">paper(ICML X MuGen)</a> |
+                    <a href="https://icml.cc/virtual/2025/poster/46647" target="_blank">conference</a> | 
+                    <a href="https://icml.cc/media/PosterPDFs/ICML%202025/46647.png?t=1752158965.3367517" target="_blank">poster</a> |
+                    <a href="https://github.com/mokcho/spk_id_unlearn_icml2025" target="_blank">github</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
     <div id="pub1Modal" class="modal">
         <div class="modal-content">
             <button class="close-button" onclick="closeModal('pub1')">×</button>
