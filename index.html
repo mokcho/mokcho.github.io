@@ -9,8 +9,8 @@
             --navy: #3d5131;  /* Lighter navy color */
             --light-navy: #72a971;
             --lightest-navy: #7fab6f;
-            --edu-navy: #72a971; /* Lighter color for education box */
-            --activity-blue: #3f5722;  /* Different blue for Other Activities */
+            --edu-navy: #5d6c5c; /* Lighter color for education box */
+            --activity-blue: #899579;  /* Different blue for Other Activities */
             --white: #ffffff;
             --black: #000000;
         }
@@ -529,7 +529,7 @@
             </div>
             <div class="modal-body">
                 <h3>Authors</h3>
-                <p>Jinju Kim, Haeji Jung, Youjeong Roh, Jong Hwan Ko, and David R. Mortensen</p>
+                <p><span class="highlight">Jinju Kim</span>, Haeji Jung, Youjeong Roh, Jong Hwan Ko, and David R. Mortensen</p>
                 
                 <h3>Abstract</h3>
                 <p>to be updated</p>
@@ -552,7 +552,7 @@
             </div>
             <div class="modal-body">
                 <h3>Authors</h3>
-                <p>Haeji Jung, Jinju Kim, Kyungjin Kim, Youjeong Roh, and David R. Mortensen</p>
+                <p>Haeji Jung,<span class="highlight">Jinju Kim</span>, Kyungjin Kim, Youjeong Roh, and David R. Mortensen</p>
                 
                 <h3>Abstract</h3>
                 <p>to be updated</p>
@@ -576,7 +576,7 @@
             </div>
             <div class="modal-body">
                 <h3>Authors</h3>
-                <p>Jinju Kim*, Taesoo Kim*, Dong Chan Kim, Jong Hwan Ko, and Gyeong-Moon Park</p>
+                <p><span class="highlight">Jinju Kim*</span>, Taesoo Kim*, Dong Chan Kim, Jong Hwan Ko, and Gyeong-Moon Park</p>
                 
                 <h3>Abstract</h3>
                 <p>The rapid advancement of Zero-Shot Text-to-Speech (ZS-TTS) technology has enabled high-fidelity voice synthesis from minimal audio cues, raising significant privacy and ethical concerns. Despite the threats to voice privacy, research to selectively remove the knowledge to replicate unwanted individual voices from pre-trained model parameters has not been explored. In this paper, we address the new challenge of speaker identity unlearning for ZS-TTS systems. To meet this goal, we propose the first machine unlearning frameworks for ZS-TTS, especially Teacher-Guided Unlearning (TGU), designed to ensure the model forgets designated speaker identities while retaining its ability to generate accurate speech for other speakers. Our proposed methods incorporate randomness to prevent consistent replication of forget speakers' voices, assuring unlearned identities remain untraceable. Additionally, we propose a new evaluation metric, speaker-Zero Retrain Forgetting (spk-ZRF). This assesses the model's ability to disregard prompts associated with forgotten speakers, effectively neutralizing its knowledge of these voices. The experiments conducted on the state-of-the-art model demonstrate that TGU prevents the model from replicating forget speakers' voices while maintaining high quality for other speakers.The demo is available at https://speechunlearn.github.io/ .</p>
@@ -600,29 +600,32 @@
         <div class="modal-content">
             <button class="close-button" onclick="closeModal('pub1')">×</button>
             <div class="modal-header">
-                <h2 class="modal-title">MEMHD: Memory-Efficient Multi-Centroid Hyperdimensional Computing for Fully-Utilized In-Memory Computing Architectures</h2>
-                <div class="modal-subtitle">DATE 2025</div>
+                <h2 class="modal-title">Domain-Specific Multilingual Strategies for Medical NLP: A Cross-Lingual Analysis of Orthographic and Phonemic Representations</h2>
+                <div class="modal-subtitle">IEEE EMBC 2025</div>
             </div>
             <div class="modal-body">
                 <h3>Authors</h3>
-                <p>Do Yeong Kang, Yeong Hwan Oh, Chanwook Hwang, Jinhee Kim, Kang Eun Jeon*, Jong Hwan Ko*</p>
+                <p>Kyungjin Kim, <span class="highlight">Jinju Kim</span>, Haeji Jung, David R Mortensen, Jongmo Seo</p>
                 
                 <h3>Abstract</h3>
-                <p>The implementation of Hyperdimensional Computing (HDC) on In-Memory Computing (IMC) architectures faces significant challenges due to the mismatch between high-dimensional vectors and IMC array sizes, leading to inefficient memory utilization and increased computation cycles. This paper presents MEMHD, a Memory-Efficient Multi-centroid HDC framework designed to address these challenges. MEMHD introduces a clustering-based initialization method and quantization-aware iterative learning for multi-centroid associative memory. Through these approaches and its overall architecture, MEMHD achieves a significant reduction in memory requirements while maintaining or improving classification accuracy. Our approach achieves full utilization of IMC arrays and enables one-shot (or few-shot) associative search. Experimental results demonstrate that MEMHD outperforms state-of-the-art binary HDC models, achieving up to 13.69% higher accuracy with the same memory usage, or 13.25x more memory efficiency at the same accuracy level. Moreover, MEMHD reduces computation cycles by up to 80x and array usage by up to 71x compared to baseline IMC mapping methods when mapped to 128x128 IMC arrays, while significantly improving energy and computation cycle efficiency.</p>
+                <p>Medical natural language processing (NLP) has greatly benefited from the increasing availability of electronic health records (EHRs) across multiple languages. However, most available resources are heavily biased toward English, restricting the development of non-English medical NLP models and limiting their broader adoption in healthcare AI.
+                    In general domain NLP, monolingual models trained on high-resource European languages often outperform multilingual models. 
+                    However, this paper takes a domain-specific perspective, highlighting the unique linguistic characteristics of medical terminology. Using a diverse corpus of medical texts in English, Italian, Spanish, and French, we pretrain RoBERTa-based models in both monolingual and multilingual settings. 
+                    Contrary to conventional NLP trends, our results suggest that multilingual training enhances cross-lingual knowledge transfer and can even outperform monolingual models in medical domains. Through a comparative analysis of orthographic and phonemic representations, we find evidence suggesting that the strong Latin roots of medical terminology may facilitate effective knowledge sharing among languages with similar scripts.
+                    These findings indicate that orthographically focused multilingual strategies could provide a more robust framework for modeling specialized medical terminology. In particular, multilingual training that capitalizes on script similarities appears to enable richer information utilization, which may contribute to improved medical NLP performance across languages.</p>
                 
                 <h3>Keywords</h3>
-                <p>Hyperdimensional Computing, In-Memory Computing, Multi-Centroid</p>
+                <p>Phonemic Representations, NLP, Multilingual Models, Medical AI</p>
                 
                 <h3>Links</h3>
                 <p>
-                    <a href="https://www.arxiv.org/abs/2502.07834" target="_blank">Paper</a> | 
-                    <a href="https://drive.google.com/file/d/1KP-csZMp8lb5LWz71ak0YbPxBrFktBW_/view?usp=drive_link" target="_blank">Poster</a>
+                    <a href="files/C1_EMBC/paper.pdf" target="_blank">Paper</a> 
                 </p>
             </div>
         </div>
     </div>
 
-    <div id="proj1Modal" class="modal">
+    <!-- <div id="proj1Modal" class="modal">
         <div class="modal-content">
             <button class="close-button" onclick="closeModal('proj1')">×</button>
             <div class="modal-header">
@@ -651,9 +654,9 @@
                 <p><a href="https://www.youtube.com/live/g6M9_985Jl4?si=ek94oLn6wSLZp_2u&t=15060" target="_blank">Competition Video (4:11:00~4:17:00)</a></p>
             </div>
         </div>
-    </div>
+    </div> -->
 
-    <div id="proj2Modal" class="modal">
+    <!-- <div id="proj2Modal" class="modal">
         <div class="modal-content">
             <button class="close-button" onclick="closeModal('proj2')">×</button>
             <div class="modal-header">
@@ -682,7 +685,7 @@
                 <p><a href="https://www.skku.edu/skku/campus/skk_comm/news.do?mode=view&articleNo=118941" target="_blank">SKKU News Article</a></p>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <footer>
         <div class="container">
