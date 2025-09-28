@@ -7,10 +7,10 @@
     <style>
         :root {
             --navy: #92a686;  /* Lighter navy color */
-            --light-navy: #72a971;
-            --lightest-navy: #7fab6f;
+            --light-navy: #a0a165;
+            --lightest-navy: #8d6a2f;
             --edu-navy: #5d6c5c; /* Lighter color for education box */
-            --activity-blue: #689828;  /* Different blue for Other Activities */
+            --activity-blue: #c77171;  /* Different blue for Other Activities */
             --white: #ffffff;
             --black: #000000;
         }
@@ -115,14 +115,14 @@
         }
 
         .profile-info h1 {
-            font-size: 32px;
+            font-size: 24px;
             margin-bottom: 10px;
             color: var(--black);
         }
 
         .profile-info p {
             color: var(--black);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             padding-bottom: 50px; /* Make space for the social icons */
         }
 
@@ -157,7 +157,7 @@
         }
 
         .section-title {
-            font-size: 28px;
+            font-size: 24px;
             margin-bottom: 30px;
             position: relative;
             text-align: left;
@@ -199,19 +199,19 @@
         }
 
         .card-title {
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 10px;
         }
 
         .card-date {
-            font-size: 14px;
+            font-size: 12px;
             opacity: 0.8;
             margin-bottom: 10px;
         }
 
         .card-description {
             opacity: 0.9;
-            font-size: 15px;
+            font-size: 14px;
         }
 
         .clickable {
@@ -264,7 +264,7 @@
         }
 
         .modal-title {
-            font-size: 24px;
+            font-size: 20px;
             margin-bottom: 10px;
             color: var(--navy);
         }
@@ -272,7 +272,7 @@
         .modal-subtitle {
             color: var(--black);
             opacity: 0.7;
-            font-size: 16px;
+            font-size: 14px;
         }
 
         .modal-body {
@@ -358,13 +358,14 @@
                 </div>
                 <div class="profile-info">
                     <h1>Jinju (Pearl) Kim</h1>
-                    <p>Hello, I am an incoming visiting researcher at Carnegie Mellon University (CMU) LTI advised by Prof. Bhiksha Raj <a href="https://cmu-mlsp.github.io/team/" target="_blank" style="color: #5E8040; text-decoration: underline;">MLSP Group</a>.
-                        I'm pursuing an M.S. in Electrical and Computer Engineering at Sungkyunkwan University (SKKU), advised by Prof. Jong Hwan Ko at <a href="https://iris.skku.edu/" target="_blank" style="color: #5E8040; text-decoration: underline;">IRIS Lab</a>. 
-                        I am also collaborating with CMU LTI's Prof. David R. Mortensen of <a href="https://changelinglab.github.io/" target="_blank" style="color: #5E8040; text-decoration: underline;">ChangeLing Lab</a>.
+                    <p>Hello, I am a visiting researcher at <a href="https://www.lti.cs.cmu.edu/" target="_blank" style="color: #5E8040; text-decoration: underline;">Carnegie Mellon University (CMU) LTI</a> advised by <a href="https://www.lti.cs.cmu.edu/people/faculty/raj-bhiksha.html" target="_blank" style="color: #5E8040; text-decoration: underline;">Bhiksha Raj</a> and <a href="http://ayesha.lti.cs.cmu.edu/mlsp/people/rsingh/index.html" target="_blank" style="color: #5E8040; text-decoration: underline;">Rita Singh</a> with the <a href="https://cmu-mlsp.github.io/team/" target="_blank" style="color: #5E8040; text-decoration: underline;">MLSP Group</a>.
+                        I'm an M.S. candidate in Electrical and Computer Engineering at Sungkyunkwan University (SKKU), advised by <a href="https://iris.skku.edu/professor/" target="_blank" style="color: #5E8040; text-decoration: underline;">Jong Hwan Ko</a> at <a href="https://iris.skku.edu/" target="_blank" style="color: #5E8040; text-decoration: underline;">IRIS Lab</a>. 
+                        I am also collaborating with CMU LTI's <a href="https://www.lti.cs.cmu.edu/people/faculty/mortensen-david.html" target="_blank" style="color: #5E8040; text-decoration: underline;">David R. Mortensen</a> of <a href="https://changelinglab.github.io/" target="_blank" style="color: #5E8040; text-decoration: underline;">ChangeLing Lab</a>.
                     </p>
                     <p>
-                        <span class="highlight">I will be applying for Fall '26 PhD Programs!</span> My research is motivated by Efficient, Reliable, and Accessible Speech & Language Systems to respect and reflect human diversity -  <strong>Machine Unlearning for AI safety and privacy</strong>, <strong>Generalization for Low-Resource Language Varieties</strong>. 
-                        Feel free to contact me for collaborative works.
+                        Breakthroughs in AI introduce unintended side-effects. I enter the stage here, <strong>to enhance availability of AI by preventing misusage and extending its benefits for under-served communities.</strong> I pursue Efficient, Reliable, and Accessible Speech & Language Systems.
+                        <span class="highlight">I will be applying for Fall '26 PhD Programs!</span> Feel free to contact me for collaborative works.
+                        <!-- to respect and reflect human diversity -->
                     </p>
                     <div class="social-links">
                         <a href="/files/Jinju_Kim_CV.pdf" title="CV">
@@ -402,8 +403,8 @@
             <div class="card">
                 <div class="card-content">
                     <h3 class="card-title">Visiting Researcher @ Carnegie Mellon Univ. LTI</h3>
-                    <div class="card-date">Aug. 2025 - Present (in-person)</div>
-                    <p class="card-description">MLSP Group (advised by Bhiksha Raj)</p>
+                    <div class="card-date">Sept. 2025 - Present (in-person)</div>
+                    <p class="card-description">MLSP Group (advised by Bhiksha Raj, Rita Singh)</p>
                 </div>
             </div>    
             <div class="card">
@@ -433,9 +434,16 @@
     <section id="publication">
         <div class="container">
             <h2 class="section-title">📄 Publications</h2>
+            <div class="card clickable" onclick="openModal('pub1')">
+                <div class="card-content">
+                    <h3 class="card-title">No Encore: Unlearning as Opt-Out in Music Generation</h3>
+                    <div class="card-date">NeurIPS 2025 AI4Music Workshop</div>
+                    <p class="card-description">Work on investigating machine unlearning for text-to-music generation as a mechanism for opt-out, aimed at protecting against unauthorized exploitation in music AI.</p>
+                </div>
+            </div>
             <div class="card clickable" onclick="openModal('pub2')">
                 <div class="card-content">
-                    <h3 class="card-title">[C2]Do Not Mimic My Voice : Speaker Identity Unlearning for Zero-Shot Text-to-Speech</h3>
+                    <h3 class="card-title">Do Not Mimic My Voice : Speaker Identity Unlearning for Zero-Shot Text-to-Speech</h3>
                     <div class="card-date">Dual Acceptation to ICML 2025,  MuGen X ICML 2025 Oral</div>
                     <p class="card-description">First work on applying Machine Unlearning to Speech Synthesis - defined Speaker Identity Unlearning, 
                         proposed novel framework and metric : Teacher-Guided Unlerning and spk-ZRF with extensive experiments.</p>
@@ -443,23 +451,23 @@
             </div>
             <div class="card clickable" onclick="openModal('pub1')">
                 <div class="card-content">
-                    <h3 class="card-title">[C1]Domain-Specific Multilingual Strategies for Medical NLP: A Cross-Lingual Analysis of Orthographic and Phonemic Representations</h3>
+                    <h3 class="card-title">Domain-Specific Multilingual Strategies for Medical NLP: A Cross-Lingual Analysis of Orthographic and Phonemic Representations</h3>
                     <div class="card-date">IEEE EMBC 2025</div>
                     <p class="card-description">Analysis on different phonemic representations on Multilingual NLP</p>
                 </div>
             </div>
             <div class="card clickable" onclick="openModal('pub4')">
                 <div class="card-content">
-                    <h3 class="card-title">[U2](Paper on Low-Resource Varieties)</h3>
+                    <h3 class="card-title">(Paper on Low-Resource Varieties via Domain Generalization)</h3>
                     <div class="card-date">Under Review</div>
-                    <p class="card-description">EMNLP 2025</p>
+                    <p class="card-description">October ARR</p>
                 </div>
             </div>
             <div class="card clickable" onclick="openModal('pub3')">
                 <div class="card-content">
-                    <h3 class="card-title">[U1](Paper on Zero-Shot Multilingual Performance)</h3>
+                    <h3 class="card-title">(Paper on Zero-Shot Multilingual Performance via Phonological Representations)</h3>
                     <div class="card-date">Under Review</div>
-                    <p class="card-description">EMNLP 2025</p>
+                    <p class="card-description">October ARR</p>
                 </div>
             </div>
         </div>
@@ -500,7 +508,7 @@
             <div class="card clickable" onclick="openModal('proj1')">
                 <div class="card-content">
                     <h3 class="card-title">Speech Command Real-Time Targeting & Fire AI Cannon for Moving Objects</h3>
-                    <div class="card-date">SolvIT Inc., Oct. 2024 - Feb. 2025</div>
+                    <div class="card-date">Carnegie Mellon Univ & SolvIT Inc., Oct. 2024 - Feb. 2025</div>
                     <p class="card-description">Developed speech command pipeline as NLP developer - including but not limited to : Voice Activity Detection, Real-Time Automatic Speech Recognition</p>
                 </div>
             </div>
@@ -568,7 +576,7 @@
         </div>
     </div>
 
-    <div id="pub2Modal" class="modal">
+        <div id="pub2Modal" class="modal">
         <div class="modal-content">
             <button class="close-button" onclick="closeModal('pub2')">×</button>
             <div class="modal-header">
@@ -592,6 +600,31 @@
                     <a href="https://icml.cc/virtual/2025/poster/46647" target="_blank">conference</a> | 
                     <a href="https://icml.cc/media/PosterPDFs/ICML%202025/46647.png?t=1752158965.3367517" target="_blank">poster</a> |
                     <a href="https://github.com/mokcho/spk_id_unlearn_icml2025" target="_blank">github</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="pub3Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('pub3')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">No Encore: Unlearning as Opt-Out in Music Generation</h2>
+                <div class="modal-subtitle">NeurIPS 2025 AI4Music Workshop</div>
+            </div>
+            <div class="modal-body">
+                <h3>Authors</h3>
+                <p><span class="highlight">Jinju Kim</span>, Taehan Kim, Abdul Waheed, Jong Hwan Ko, and Rita Singh</p>
+                
+                <h3>Abstract</h3>
+                <p>AI music generation is rapidly emerging in the creative industries, enabling intuitive music generation from textual descriptions. However, these systems pose risks in exploitation of copyrighted creations, raising ethical and legal concerns. In this paper, we present preliminary results on the first application of machine unlearning techniques from an ongoing research to prevent inadvertent usage of creative content. Particularly, we explore existing methods in machine unlearning to a pre-trained Text-to-Music (TTM) baseline and analyze their efficacy in unlearning pre-trained datasets without harming model performance. Through our experiments, we provide insights into the challenges of applying unlearning in music generation, offering a foundational analysis for future works on application of unlearning for music generative AI models.</p>
+                
+                <h3>Keywords</h3>
+                <p>Machine Unlearning, Generative Unlearning, Music Generation, Text-to-Music</p>
+                
+                <h3>Links</h3>
+                <p>
+                    <a href="https://arxiv.org/abs/2509.06277" target="_blank">preprint</a>
                 </p>
             </div>
         </div>
