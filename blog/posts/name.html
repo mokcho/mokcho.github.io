@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello, World – Jinju (Pearl) Kim</title>
+    <title>how to read my name – Jinju (Pearl) Kim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #92a686;
@@ -18,7 +21,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-family: 'Inter', 'Arial', sans-serif;
         }
 
         body {
@@ -206,6 +209,56 @@
             margin: 40px 0;
         }
 
+        /* ── Dark mode ── */
+        body.dark {
+            --white: #1a1a1a;
+            --black: #e8e8e8;
+            --text-muted: #aaa;
+            --bg-light: #2a2a2a;
+            --light-navy: #1e3a1ab2;
+        }
+
+        body.dark .post-body {
+            color: #d0d0d0;
+        }
+
+        body.dark .post-body h3 {
+            color: #ccc;
+        }
+
+        body.dark .post-body code,
+        body.dark .post-body pre {
+            background-color: #2e2e2e;
+            color: #d0d0d0;
+        }
+
+        body.dark hr.divider {
+            border-top-color: #444;
+        }
+
+        body.dark .post-tag {
+            background-color: #2a3a20;
+        }
+
+        .dark-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            padding: 0;
+            font-size: 18px;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        .dark-toggle:hover { opacity: 0.6; }
+
+        .navbar ul {
+            align-items: center;
+        }
+
         /* ── Footer ── */
         footer {
             background-color: var(--navy);
@@ -230,6 +283,9 @@
                 <li><a href="../../index.html#publication">Publications</a></li>
                 <li><a href="../../index.html#activities">Other Activities</a></li>
                 <li><a href="../index.html">Blog</a></li>
+                <li>
+                    <button class="dark-toggle" id="dark-toggle" title="Toggle dark mode" onclick="toggleDark()">🌙</button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -241,59 +297,58 @@
 
             <div class="post-meta">
                 <span>March 11, 2026</span>
-                <span class="post-tag">Meta</span>
+                <span class="post-tag">random</span>
             </div>
 
-            <h1 class="post-title">Hello, World – Why I Started This Blog</h1>
+            <h1 class="post-title">how to read my name</h1>
 
             <!-- Cover image / emoji banner -->
-            <div class="post-cover">🎙️</div>
+            <div class="post-cover">⚪</div>
 
             <!-- ── Post content ── -->
             <div class="post-body">
 
                 <p>
-                    This is the first post on this blog. I've been meaning to start writing for a while,
-                    and I figured the best time to start is now.
+                    i do not have a preferred name. my names are all my names. i will reply as happily as i could to any with no preference.
                 </p>
 
-                <h2>What This Blog Is About</h2>
+                <h2>how to pronounce 진주/jinju</h2>
 
                 <p>
-                    I plan to write about things I'm thinking through in my research — ideas that aren't
-                    ready to be papers yet, experiments that didn't work but taught me something, and
-                    occasionally opinions on the field.
+                    in korean it's 진주 [t͡ɕiɲd͡ʑu].
+                    romanized jinju - it's literally like jin and juice without "ice", get it?
                 </p>
 
-                <p>
-                    Topics will likely include: machine unlearning, voice privacy, speech synthesis,
-                    low-resource NLP, and whatever else I find interesting enough to write about.
-                </p>
+                <h2>how to pronounce pearl</h2>
 
-                <h2>Why Write at All?</h2>
-
-                <blockquote>
+                <!-- <blockquote>
                     "Writing is thinking. To write well is to think clearly. That's why it's so hard."
                     — David McCullough
-                </blockquote>
+                </blockquote> -->
 
                 <p>
-                    I write because it forces me to be precise. It's easy to have a fuzzy intuition
-                    about something; it's much harder to explain it clearly to someone else. The act
-                    of writing reveals the gaps.
+                    you can actually read this in whatever accent you use, many of my friends fail to pronounce the -earl [ɝl] (IPA) part. even my parents.
+                    this often resulted in me being called paul or even carl. i'll actually respond to all of those.
+                    펄 [pʰʌl] is also a name i look (or listen) for.
                 </p>
 
-                <p>
-                    I also write for my future self — these posts are notes I'd want to have when
-                    I come back to a problem six months later.
-                </p>
 
                 <hr class="divider">
 
                 <p>
-                    If something here is useful to you, or if you disagree with something I've written,
-                    feel free to reach out. You can find my contact info on the
-                    <a href="../../index.html">homepage</a>.
+                    ah also, you can call me Жемчужина [ʐɨmˈt͡ɕuʐɨnə], my profs and friends i met in undergrad call me that.
+                </p>
+                <p>  
+                    funny thing is my korean friends/colleagues call me by pearl (or even perla, español var.), and my
+                    friends/co-workers that i've met in US will call me jinju, because many think "pearl is not my real name".
+                </p>
+                <p>
+                    sure there are people that may feel disattachment to some of their names,
+                    but speaking only for myself, i do not have that. they all mean the same thing. ⚪
+                </p>
+                <p>
+                    also let me know how you call ⚪ in your language, i'd happily take on a new name.
+                    hooray for multilinguality of my name!
                 </p>
 
             </div>
@@ -307,6 +362,20 @@
             <p class="copyright">© 2025 Jinju (Pearl) Kim. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('dark-toggle');
+        function applyDark(on) {
+            document.body.classList.toggle('dark', on);
+            btn.textContent = on ? '☀️' : '🌙';
+        }
+        function toggleDark() {
+            const on = !document.body.classList.contains('dark');
+            localStorage.setItem('darkMode', on);
+            applyDark(on);
+        }
+        applyDark(localStorage.getItem('darkMode') === 'true');
+    </script>
 
 </body>
 </html>

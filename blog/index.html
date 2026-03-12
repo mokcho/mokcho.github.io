@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog – Jinju (Pearl) Kim</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --navy: #92a686;
@@ -18,7 +21,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', 'Helvetica', sans-serif;
+            font-family: 'Inter', 'Arial', sans-serif;
         }
 
         body {
@@ -214,6 +217,41 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ── Dark mode ── */
+        body.dark {
+            --white: #1a1a1a;
+            --black: #e8e8e8;
+            --text-muted: #aaa;
+            --light-navy: #1e3a1ab2;
+        }
+
+        body.dark .blog-card {
+            background: #242424;
+        }
+
+        body.dark .blog-card-tag {
+            background-color: #2a3a20;
+        }
+
+        .dark-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            padding: 0;
+            font-size: 18px;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        .dark-toggle:hover { opacity: 0.6; }
+
+        .navbar ul {
+            align-items: center;
+        }
     </style>
 </head>
 <body>
@@ -226,6 +264,9 @@
                 <li><a href="../index.html#publication">Publications</a></li>
                 <li><a href="../index.html#activities">Other Activities</a></li>
                 <li><a href="index.html">Blog</a></li>
+                <li>
+                    <button class="dark-toggle" id="dark-toggle" title="Toggle dark mode" onclick="toggleDark()">🌙</button>
+                </li>
             </ul>
         </div>
     </nav>
@@ -243,19 +284,19 @@
 
             <!-- ── SAMPLE POST CARD ── -->
             <!-- Copy this block to add a new post. -->
-            <a class="blog-card" href="posts/hello-world.html">
+            <a class="blog-card" href="posts/name.html">
                 <div class="blog-card-thumbnail" style="background-color: var(--light-navy);">
                     <!-- Replace the emoji with an <img src="..."> if you have a cover image -->
-                    🎙️
+                    ⚪
                 </div>
                 <div class="blog-card-body">
                     <div class="blog-card-meta">
                         <span>March 2026</span>
-                        <span class="blog-card-tag">Speech</span>
+                        <span class="blog-card-tag">Random</span>
                     </div>
-                    <div class="blog-card-title">Hello, World – Why I Started This Blog</div>
+                    <div class="blog-card-title">how to read my name</div>
                     <div class="blog-card-excerpt">
-                        A short note on what this blog is about, what I plan to write, and why I think writing is useful for research.
+                        title is content
                     </div>
                 </div>
             </a>
@@ -270,6 +311,20 @@
             <p class="copyright">© 2025 Jinju (Pearl) Kim. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const btn = document.getElementById('dark-toggle');
+        function applyDark(on) {
+            document.body.classList.toggle('dark', on);
+            btn.textContent = on ? '☀️' : '🌙';
+        }
+        function toggleDark() {
+            const on = !document.body.classList.contains('dark');
+            localStorage.setItem('darkMode', on);
+            applyDark(on);
+        }
+        applyDark(localStorage.getItem('darkMode') === 'true');
+    </script>
 
 </body>
 </html>
