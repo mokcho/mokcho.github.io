@@ -15,6 +15,54 @@
             --black: #000000;
         }
 
+        /* ── Dark mode overrides ── */
+        body.dark {
+            --white: #2d2d2c;
+            --black: #e8e8e8;
+            --light-navy: #c7dec4b2;
+            --edu-navy: #92a686;
+            --activity-blue: rgb(169, 153, 128);
+        }
+
+        body.dark .modal-content {
+            background-color: #4e4a3f;
+            color: #e8e8e8;
+        }
+
+        body.dark .modal-subtitle {
+            color: #aaa;
+        }
+
+        body.dark .modal-body p,
+        body.dark .modal-body ul,
+        body.dark .modal-body li {
+            color: #ccc;
+        }
+
+        body.dark .affiliations-detail p {
+            color: #aaa;
+        }
+
+        body.dark .close-button {
+            color: var(--navy);
+        }
+
+        /* toggle button */
+        .dark-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            padding: 0;
+            font-size: 18px;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        .dark-toggle:hover { opacity: 0.6; }
+
         * {
             margin: 0;
             padding: 0;
@@ -51,6 +99,7 @@
         .navbar ul {
             display: flex;
             justify-content: center;
+            align-items: center;
             list-style: none;
         }
 
@@ -111,7 +160,7 @@
         .profile-info {
             flex: 1;
             min-width: 300px;
-            position: relative;
+            /* position: relative; */
         }
 
         .profile-info h1 {
@@ -120,12 +169,12 @@
             color: var(--black);
         }
 
+        /* TO: */
         .profile-info p {
             color: var(--black);
             margin-bottom: 15px;
-            padding-bottom: 30px; /* Make space for the social icons */
         }
-        
+
         /* ── Collapsible affiliations ── */
         .affiliations-toggle {
             display: inline-flex;
@@ -186,10 +235,7 @@
             display: flex;
             gap: 20px;
             justify-content: center;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            margin-top: 12px;
         }
 
         .social-links a {
@@ -416,10 +462,19 @@
                     <h1>Jinju (Pearl) Kim</h1>
                     
                     <p>
-                        Hello, I am a M.S. candidate in Electrical and Computer Engineering at
+                        Breakthroughs in AI introduce unintended side-effects. I work <strong>to enhance availability of AI by preventing misusage and extending its benefits.</strong> I pursue Efficient, Reliable, and Accessible Speech & Language Systems. 
+                    </p>
+                    <p>
+                        I'll be a research intern for Music Technology Team
+                        at <a href="https://ai.sony/" target="_blank" style="color: #5E8040; text-decoration: underline;">Sony AI (Tokyo)</a> in Summer 2026.
+                        Starting Fall '26, I'll pursue my PhD in ???.
+                    </p>
+                    <p>
+                        Currently, I am a M.S. candidate in Electrical and Computer Engineering at
                         <a href="https://www.skku.edu/" target="_blank" style="color: #5E8040; text-decoration: underline;">Sungkyunkwan University (SKKU)</a>,
                         advised by <a href="https://iris.skku.edu/professor/" target="_blank" style="color: #5E8040; text-decoration: underline;">Jong Hwan Ko</a>
                         at <a href="https://iris.skku.edu/" target="_blank" style="color: #5E8040; text-decoration: underline;">IRIS Lab</a>.
+                        
                     </p>
 
                     <!-- Collapsible previous affiliations -->
@@ -429,6 +484,7 @@
                     <div class="affiliations-detail" id="affiliations-detail">
                         <p>
                             I was a visiting researcher at <a href="https://www.lti.cs.cmu.edu/" target="_blank" style="color: #5E8040; text-decoration: underline;">Carnegie Mellon University (CMU) LTI</a> advised by <a href="https://www.lti.cs.cmu.edu/people/faculty/raj-bhiksha.html" target="_blank" style="color: #5E8040; text-decoration: underline;">Bhiksha Raj</a> and <a href="http://ayesha.lti.cs.cmu.edu/mlsp/people/rsingh/index.html" target="_blank" style="color: #5E8040; text-decoration: underline;">Rita Singh</a> with the <a href="https://cmu-mlsp.github.io/team/" target="_blank" style="color: #5E8040; text-decoration: underline;">MLSP Group</a>.
+                            I have also collaborated with <a href="https://www.cs.cmu.edu/~dmortens/" target="_blank" style="color: #5E8040; text-decoration: underline;"> David R. Mortensen.
                         </p>
                     </div>
 
@@ -472,47 +528,17 @@
     <nav class="navbar">
         <div class="container">
             <ul>
-                <li><a href="#education">Affiliations</a></li>
                 <li><a href="#publication">Publications</a></li>
+                <li><a href="#education">Affiliations</a></li>
                 <li><a href="#project">Project</a></li>
                 <li><a href="#activities">Other Activities</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li>
+                    <button class="dark-toggle" id="dark-toggle" title="Toggle dark mode" onclick="toggleDark()">🌙</button>
+                </li>
             </ul>
         </div>
     </nav>
-
-    <section id="education">
-        <div class="container">
-            <h2 class="section-title">🎓 Affiliations</h2>
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="card-title">Visiting Researcher @ Carnegie Mellon Univ. LTI</h3>
-                    <div class="card-date">Sept. 2025 - Feb. 2026 (in-person)</div>
-                    <p class="card-description">MLSP Group (Prof. Bhiksha Raj, Prof. Rita Singh)</p>
-                </div>
-            </div>    
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="card-title">M.S. in Electrical and Computer Engineering @ Sungkyunkwan Univ.</h3>
-                    <div class="card-date">Mar. 2024 - Present (in-person & remote)</div>
-                    <p class="card-description">IRIS Lab (advised by Prof. Jong Hwan Ko)</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="card-title">Visiting Researcher @ Carnegie Mellon Univ. S3D</h3>
-                    <div class="card-date">Aug. 2024 - Feb. 2025 (in-person)</div>
-                    <p class="card-description">ChangeLing Lab (Prof. David R. Mortensen)</p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-content">
-                    <h3 class="card-title">B.S in Applied Artificial Intelligence / B.A in Russian Language and Literature @ Sungkyunkwan Univ.</h3>
-                    <div class="card-date">Mar. 2018 - Feb. 2024</div>
-                    <p class="card-description">Magna Cum Laude (4.08/4.5), Undergrad Researcher in IRIS Lab (advised by Jong Hwan Ko)</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <section id="publication">
         <div class="container">
@@ -565,6 +591,40 @@
             </div>
         </div>
 
+    </section>
+
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">🎓 Affiliations</h2>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">M.S. in Electrical and Computer Engineering @ Sungkyunkwan Univ.</h3>
+                    <div class="card-date">Mar. 2024 - Present (in-person & remote)</div>
+                    <p class="card-description">IRIS Lab (advised by Prof. Jong Hwan Ko)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Visiting Researcher @ Carnegie Mellon Univ. LTI</h3>
+                    <div class="card-date">Sept. 2025 - Feb. 2026 (in-person)</div>
+                    <p class="card-description">MLSP Group (Prof. Bhiksha Raj, Prof. Rita Singh)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">Visiting Researcher @ Carnegie Mellon Univ. S3D</h3>
+                    <div class="card-date">Aug. 2024 - Feb. 2025 (in-person)</div>
+                    <p class="card-description">ChangeLing Lab (Prof. David R. Mortensen)</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <h3 class="card-title">B.S in Applied Artificial Intelligence / B.A in Russian Language and Literature @ Sungkyunkwan Univ.</h3>
+                    <div class="card-date">Mar. 2018 - Feb. 2024</div>
+                    <p class="card-description">Magna Cum Laude (4.08/4.5), Undergrad Researcher in IRIS Lab (advised by Jong Hwan Ko)</p>
+                </div>
+            </div>
+        </div>
     </section>
 
         <section id="press">
@@ -875,6 +935,20 @@
                 document.body.style.overflow = 'auto';
             }
         }
+
+        // Dark mode
+        const btn = document.getElementById('dark-toggle');
+        function applyDark(on) {
+            document.body.classList.toggle('dark', on);
+            btn.textContent = on ? '☀️' : '🌙';
+        }
+        function toggleDark() {
+            const on = !document.body.classList.contains('dark');
+            localStorage.setItem('darkMode', on);
+            applyDark(on);
+        }
+        // Restore preference on load
+        applyDark(localStorage.getItem('darkMode') === 'true');
     </script>
 </body>
 </html>

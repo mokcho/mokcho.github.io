@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog – Jinju (Pearl) Kim</title>
+    <style>
+        :root {
+            --navy: #92a686;
+            --light-navy: #0e330ab2;
+            --lightest-navy: #8d6a2f;
+            --white: #ffffff;
+            --black: #000000;
+            --text-muted: #555;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+
+        /* ── Navbar ── */
+        .navbar {
+            background-color: var(--navy);
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin: 0 20px;
+        }
+
+        .navbar ul li a {
+            color: var(--white);
+            text-decoration: none;
+            position: relative;
+            transition: opacity 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            opacity: 0.8;
+        }
+
+        .navbar ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        .navbar ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* ── Page header ── */
+        .page-header {
+            padding: 50px 0 30px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        .section-divider {
+            width: 50px;
+            height: 3px;
+            background-color: var(--navy);
+            margin: 16px auto 0;
+            border: none;
+        }
+
+        /* ── Blog grid ── */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+            padding: 40px 0 60px;
+        }
+
+        .blog-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: var(--black);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            background: var(--white);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-card-thumbnail {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            background-color: var(--light-navy);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 36px;
+        }
+
+        .blog-card-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .blog-card-body {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .blog-card-tag {
+            background-color: #e8f0e3;
+            color: #5E8040;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 20px;
+        }
+
+        .blog-card-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .blog-card-excerpt {
+            font-size: 13px;
+            color: var(--text-muted);
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* ── Empty state ── */
+        .empty-state {
+            text-align: center;
+            padding: 80px 20px;
+            color: var(--text-muted);
+        }
+
+        .empty-state .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        /* ── Footer ── */
+        footer {
+            background-color: var(--navy);
+            padding: 20px 0;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .copyright {
+            opacity: 0.8;
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#education">Affiliations</a></li>
+                <li><a href="../index.html#publication">Publications</a></li>
+                <li><a href="../index.html#activities">Other Activities</a></li>
+                <li><a href="index.html">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Blog</h1>
+            <p>Notes on research, ideas, and things I find interesting.</p>
+            <hr class="section-divider">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="blog-grid" id="blog-grid">
+
+            <!-- ── SAMPLE POST CARD ── -->
+            <!-- Copy this block to add a new post. -->
+            <a class="blog-card" href="posts/hello-world.html">
+                <div class="blog-card-thumbnail" style="background-color: var(--light-navy);">
+                    <!-- Replace the emoji with an <img src="..."> if you have a cover image -->
+                    🎙️
+                </div>
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        <span>March 2026</span>
+                        <span class="blog-card-tag">Speech</span>
+                    </div>
+                    <div class="blog-card-title">Hello, World – Why I Started This Blog</div>
+                    <div class="blog-card-excerpt">
+                        A short note on what this blog is about, what I plan to write, and why I think writing is useful for research.
+                    </div>
+                </div>
+            </a>
+
+            <!-- Add more cards above this comment -->
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p class="copyright">© 2025 Jinju (Pearl) Kim. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
