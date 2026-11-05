@@ -546,18 +546,25 @@
     <section id="publication">
         <div class="container">
             <h2 class="section-title">📄 Publications</h2>
-            <div class="card clickable" onclick="openModal('pub7')">
+            <div class="card clickable" onclick="openModal('pub8')">
                 <div class="card-content">
                     <h3 class="card-title">Paper on Speaker Identity Unlearning</h3>
                     <div class="card-date">Jimin Kim, Taeyoung Lee, <strong>Jinju Kim</strong>, Gyeong-Moon Park, and Jong Hwan Ko</div>
-                    <p class="card-description"><strong>Under Review at AAAI 2027</strong></p>
+                    <p class="card-description"><strong>Under Review</strong></p>
+                </div>
+            </div>
+                        <div class="card clickable" onclick="openModal('pub7')">
+                <div class="card-content">
+                    <h3 class="card-title">Distilling Diffusion Score Discrepancy for Efficient Training Data Attribution</h3>
+                    <div class="card-date">Sijia Liu, Joan Serra, Kin Wai Cheuk, <strong>Jinju Kim</strong>, Woosung Choi, Yukara Ikemiya, Wei-Hsiang Liao, Jiaqi W Ma, and Yuki Mitsufuji</div>
+                    <p class="card-description"><strong>arxiv preprint</strong></p>
                 </div>
             </div>
             <div class="card clickable" onclick="openModal('pub6')">
                 <div class="card-content">
-                    <h3 class="card-title">Paper on Speaker Identity Unlearning</h3>
+                    <h3 class="card-title">Continual Speaker Identity Unlearning with Minimal Inference</h3>
                     <div class="card-date"><strong>Jinju Kim</strong>, Yunsung Kang, Gyeong-Moon Park, and Jong Hwan Ko</div>
-                    <p class="card-description"><strong>Under Review at NeurIPS 2026</strong></p>
+                    <p class="card-description"><strong>arxiv preprint</strong></p>
                 </div>
             </div>
             <div class="card clickable" onclick="openModal('pub4')">
@@ -707,12 +714,58 @@
     </section>
 
     <!-- Modal windows for details -->
+    <div id="pub8Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('pub8')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">(Under Review)</h2>
+                <div class="modal-subtitle">Under Review</div>
+            </div>
+            <div class="modal-body">
+                <h3>Authors</h3>
+                <p>Jimin Kim, Taeyoung Lee, <span class="highlight">Jinju Kim</span>, Gyeong-Moon Park, Jong Hwan Ko</p>
+                
+                <h3>Abstract</h3>
+                <p>to be updated</p>
+                <h3>Keywords</h3>
+                <p>to be updated</p>
+                
+                <!-- <h3>Links</h3>
+                <p>
+                    <a href="https://openreview.net/forum?id=FQFuCu24D6#discussion" target="_blank">OpenReview (AAAI LM4UC Oral)</a> |
+                </p> -->
+            </div>
+        </div>
+    </div>
     <div id="pub7Modal" class="modal">
         <div class="modal-content">
             <button class="close-button" onclick="closeModal('pub7')">×</button>
             <div class="modal-header">
-                <h2 class="modal-title">(Under Review)</h2>
-                <div class="modal-subtitle">Under Review</div>
+                <h2 class="modal-title">Distilling Diffusion Score Discrepancy for Efficient Training Data Attribution</h2>
+                <div class="modal-subtitle">preprint</div>
+            </div>
+            <div class="modal-body">
+                <h3>Authors</h3>
+                Sijia Liu, Joan Serra, Kin Wai Cheuk, <p><span class="highlight">Jinju Kim</span>, Woosung Choi, Yukara Ikemiya, Wei-Hsiang Liao, Jiaqi W Ma, and Yuki Mitsufuji</p>
+                
+                <h3>Abstract</h3>
+                <p>to be updated</p>
+                <h3>Keywords</h3>
+                <p>to be updated</p>
+                
+                <h3>Links</h3>
+                <p>
+                    <a href="https://arxiv.org/pdf/2609.38776" target="_blank">Arxiv</a> |
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="pub6Modal" class="modal">
+        <div class="modal-content">
+            <button class="close-button" onclick="closeModal('pub6')">×</button>
+            <div class="modal-header">
+                <h2 class="modal-title">Continual Speaker Identity Unlearning with Minimal Interference</h2>
+                <div class="modal-subtitle">preprint</div>
             </div>
             <div class="modal-body">
                 <h3>Authors</h3>
@@ -723,33 +776,10 @@
                 <h3>Keywords</h3>
                 <p>to be updated</p>
                 
-                <!-- <h3>Links</h3>
+                <h3>Links</h3>
                 <p>
-                    <a href="https://openreview.net/forum?id=FQFuCu24D6#discussion" target="_blank">OpenReview (AAAI LM4UC Oral)</a> |
-                </p> -->
-            </div>
-        </div>
-    </div>
-     <div id="pub6Modal" class="modal">
-        <div class="modal-content">
-            <button class="close-button" onclick="closeModal('pub6')">×</button>
-            <div class="modal-header">
-                <h2 class="modal-title">(Under Review)</h2>
-                <div class="modal-subtitle">Under Review</div>
-            </div>
-            <div class="modal-body">
-                <h3>Authors</h3>
-                <p><span class="highlight">Jinju Kim</span>, Seungho Kwon, Wootaek Lim, Jong Hwan Ko</p>
-                
-                <h3>Abstract</h3>
-                <p>to be updated</p>
-                <h3>Keywords</h3>
-                <p>to be updated</p>
-                
-                <!-- <h3>Links</h3>
-                <p>
-                    <a href="https://openreview.net/forum?id=FQFuCu24D6#discussion" target="_blank">OpenReview (AAAI LM4UC Oral)</a> |
-                </p> -->
+                    <a href="https://arxiv.org/abs/2605.25962" target="_blank">Arxiv</a> |
+                </p>
             </div>
         </div>
     </div>
@@ -758,7 +788,7 @@
             <button class="close-button" onclick="closeModal('pub4')">×</button>
             <div class="modal-header">
                 <h2 class="modal-title">Harnessing Linguistic Dissimilarity for Language Generalization on Unseen Low-Resource Varieties</h2>
-                <div class="modal-subtitle">Under Review, AAAI 2026 LM4UC (Oral, Runner up Best Paper Award)</div>
+                <div class="modal-subtitle">CoNLL 2026 (Oral), AAAI 2026 LM4UC (Oral, Runner up Best Paper Award)</div>
             </div>
             <div class="modal-body">
                 <h3>Authors</h3>
